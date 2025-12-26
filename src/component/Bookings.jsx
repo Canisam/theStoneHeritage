@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material";
 
-import forestImg from "../assets/room1.png";
-import mountainImg from "../assets/room2.png";
-import mudImg from "../assets/room3.png";
+import forestImg from "/assets/room1.png";
+import mountainImg from "/assets/room2.png";
+import mudImg from "/assets/room3.png";
 
 const rooms = [
   {

@@ -2,8 +2,8 @@
 import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import MapMask from "../assets/bg-uk.png"; // Transparent map of Uttarakhand
-import OverlayImage from "../assets/image1.png"; // Image inside map
+import MapMask from "/assets/bg-uk.png"; // Transparent map of Uttarakhand
+import OverlayImage from "/assets/image1.png"; // Image inside map
 
 const HeroSectionVolunteer = () => {
   return (

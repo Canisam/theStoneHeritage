@@ -1,31 +1,71 @@
 import React from "react";
-import CodeIcon from '@mui/icons-material/Code';
-import GroupIcon from '@mui/icons-material/Group';
-import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
-import LanguageIcon from '@mui/icons-material/Language';
-import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-import { styled } from '@mui/material/styles';
-import { Box, Typography } from '@mui/material';
+import CodeIcon from "@mui/icons-material/Code";
+import GroupIcon from "@mui/icons-material/Group";
+import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
+import LanguageIcon from "@mui/icons-material/Language";
+import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
+import { styled } from "@mui/material/styles";
+import { Box, Typography } from "@mui/material";
 import FeaturesCard from "./FeaturesCard";
 import HeroSectionVolunteer from "./HeroSectionVolunteer";
-import BgMap from '../assets/bg-map.png';
+import BgMap from "/assets/bg-map.png";
 import NavBar from "./NavBar";
 
 const Volunteer = () => {
   const skills = [
-    { name: "Coding", description: "Proficient in writing clean and efficient code.", icon: <CodeIcon color="primary" fontSize="large" /> },
-    { name: "Teamwork", description: "Collaborates well with diverse teams and shares ideas.", icon: <GroupIcon color="secondary" fontSize="large" /> },
-    { name: "Creativity", description: "Brings innovative ideas to every project.", icon: <EmojiObjectsIcon color="warning" fontSize="large" /> },
-    { name: "Communication", description: "Clear and confident communicator.", icon: <LanguageIcon color="success" fontSize="large" /> },
-    { name: "Volunteering", description: "Passionate about social work.", icon: <VolunteerActivismIcon color="error" fontSize="large" /> },
+    {
+      name: "Coding",
+      description: "Proficient in writing clean and efficient code.",
+      icon: <CodeIcon color="primary" fontSize="large" />,
+    },
+    {
+      name: "Teamwork",
+      description: "Collaborates well with diverse teams and shares ideas.",
+      icon: <GroupIcon color="secondary" fontSize="large" />,
+    },
+    {
+      name: "Creativity",
+      description: "Brings innovative ideas to every project.",
+      icon: <EmojiObjectsIcon color="warning" fontSize="large" />,
+    },
+    {
+      name: "Communication",
+      description: "Clear and confident communicator.",
+      icon: <LanguageIcon color="success" fontSize="large" />,
+    },
+    {
+      name: "Volunteering",
+      description: "Passionate about social work.",
+      icon: <VolunteerActivismIcon color="error" fontSize="large" />,
+    },
   ];
 
   const services = [
-    { name: "Training Programs", description: "Hands-on learning experiences.", icon: <CodeIcon color="primary" fontSize="large" /> },
-    { name: "Mentorship", description: "Guidance from experienced mentors.", icon: <GroupIcon color="secondary" fontSize="large" /> },
-    { name: "Workshops", description: "Skill-building events and sessions.", icon: <EmojiObjectsIcon color="warning" fontSize="large" /> },
-    { name: "Networking", description: "Connect with professionals and peers.", icon: <LanguageIcon color="success" fontSize="large" /> },
-    { name: "Recognition", description: "Certificates and awards.", icon: <VolunteerActivismIcon color="error" fontSize="large" /> },
+    {
+      name: "Training Programs",
+      description: "Hands-on learning experiences.",
+      icon: <CodeIcon color="primary" fontSize="large" />,
+    },
+    {
+      name: "Mentorship",
+      description: "Guidance from experienced mentors.",
+      icon: <GroupIcon color="secondary" fontSize="large" />,
+    },
+    {
+      name: "Workshops",
+      description: "Skill-building events and sessions.",
+      icon: <EmojiObjectsIcon color="warning" fontSize="large" />,
+    },
+    {
+      name: "Networking",
+      description: "Connect with professionals and peers.",
+      icon: <LanguageIcon color="success" fontSize="large" />,
+    },
+    {
+      name: "Recognition",
+      description: "Certificates and awards.",
+      icon: <VolunteerActivismIcon color="error" fontSize="large" />,
+    },
   ];
 
   return (

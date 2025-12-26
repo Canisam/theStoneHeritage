@@ -2,9 +2,9 @@ import React from "react";
 import RoomsCard from "./RoomsCard";
 import NavBar from "./NavBar";
 
-import forestImg from "../assets/room1.png";
-import mountainImg from "../assets/room2.png";
-import mudImg from "../assets/room3.png";
+import forestImg from "/assets/room1.png";
+import mountainImg from "/assets/room2.png";
+import mudImg from "/assets/room3.png";
 
 const Stay = () => {
   const data = [
