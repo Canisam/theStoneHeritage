@@ -6,7 +6,7 @@ const ReviewCard = styled(Card)(({ theme }) => ({
   width: "100%",
   maxWidth: 400,
   borderRadius: "16px",
-  padding: theme.spacing(3),
+  // padding: theme.spacing(),
   position: "relative",
   boxShadow: theme.shadows[4],
   overflow: "visible", // ensure avatar shows outside
@@ -26,18 +26,18 @@ export default function TestimonialCard2({imgText, description, name, position})
   return (
     <ReviewCard>
       <CardContent sx={{ pr: 10 }}>
-        <Typography
-          variant="h4"
-          sx={{ fontSize: { xs: "1.5rem", sm: "2rem" }, lineHeight: 1 }}
-        >
-          ❝
-        </Typography>
-
+  
         <Typography
           variant="body1"
           color="text.secondary"
           sx={{ mb: 2, fontSize: { xs: "0.9rem", sm: "1rem" } }}
         >
+             <Typography
+          variant="h4"
+          sx={{ fontSize: { xs: "1.5rem", sm: "2rem" }}}
+        >
+          ❝
+        </Typography>
           {description&&description.length>0?description:" Everything from rooms to food was amazing. The Scenic view, earthly vibe, and hospitality was absolute delight to experience. The stay was clean and aesthetically pleasing. I highly recommend everyone to stay here atleast once."}
        
         </Typography>
