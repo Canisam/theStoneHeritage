@@ -16,9 +16,10 @@ const ReviewCard = styled(Card)(({ theme }) => ({
 
 const AvatarWrapper = styled("div")(() => ({
   position: "absolute",
-  right: -40, // half outside card
+  right: -30, // half outside card
   top: "50%",
   transform: "translateY(-50%)",
+
 }));
 
 export default function TestimonialCard2({imgText, description, name, position}) {
@@ -59,6 +60,7 @@ export default function TestimonialCard2({imgText, description, name, position})
             height: 120,
             border: "4px solid white",
             boxShadow: 3,
+            
           }}
         />
       </AvatarWrapper>

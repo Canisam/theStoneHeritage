@@ -92,13 +92,10 @@ const Logo = styled("div")`
     max-width: 100%;
   }
 `;
-
 const NavItemsContainer = styled("div")`
   display: flex;
   gap: clamp(1rem, 3vw, 2rem);
   align-items: center;
-  transition: all 0.3s ease-in-out;
-  flex-direction: row;
 
   @media (max-width: 768px) {
     position: absolute;
@@ -108,22 +105,30 @@ const NavItemsContainer = styled("div")`
     background-color: #dda15e;
     flex-direction: column;
     width: 100%;
-    padding: ${({ open }) => (open ? "1rem 0" : "0")};
-    height: ${({ open }) => (open ? "auto" : "0")};
+    padding: ${({ open }) => (open ? "1.2rem 0" : "0")};
     opacity: ${({ open }) => (open ? "1" : "0")};
     overflow: hidden;
-    gap: 1rem;
+    gap: 1.2rem;
   }
 `;
 
+
 const NavItem = styled("div")`
-  font: 600 clamp(0.95rem, 2vw, 1.1rem) serif;
+  font-family: serif;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   cursor: pointer;
   color: #984216;
   transition: color 0.2s ease;
+  text-align: center;
 
   &:hover {
     color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    width: 100%;
   }
 `;
 
@@ -132,20 +137,23 @@ const BookNowButton = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.4rem;
   color: #984216;
-  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  padding: 0.6rem 1.2rem;
   border-radius: 0.5rem;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
+  white-space: nowrap;
 
   &:hover {
     background-color: #ddd;
   }
 
   @media (max-width: 768px) {
-    width: 80%;
-    text-align: center;
+    width: 90%;
+    margin: 0 auto;   /* 🔥 CENTER FIX */
+    font-size: 1rem;
   }
 `;
 
@@ -153,9 +161,10 @@ const HamburgerIcon = styled("div")`
   display: none;
   cursor: pointer;
   z-index: 1100;
+  color: #984216; /* 🔥 FIX */
 
   svg {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
   }
 
   @media (max-width: 768px) {

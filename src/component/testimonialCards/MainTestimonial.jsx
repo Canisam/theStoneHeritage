@@ -100,20 +100,21 @@ const OuterDiv = styled("div")({
   flexWrap: "wrap",
   width: "100%",
 
-  "@media (max-width: 480px)": {
-    fontSize: "14px", // ✅ global text shrink
-  },
-
   "@media (max-width: 1024px)": {
     flexDirection: "column",
     alignItems: "center",
     gap: "30px",
   },
+
   "@media (max-width: 480px)": {
     fontSize: "14px",
-    "& h3": { fontSize: "16px" },
-    "& h4": { fontSize: "14px" },
-    "& p": { fontSize: "13px", lineHeight: 1.4 },
+    paddingRight: "16px", // ✅ right padding
+    paddingLeft: "16px",  // ✅ keeps symmetry
+    alignItems: "center",
+
+    "& h3": { fontSize: "16px", textAlign: "center" },
+    "& h4": { fontSize: "14px", textAlign: "center" },
+    "& p": { fontSize: "13px", lineHeight: 1.4, textAlign: "center" },
   },
 });
 
@@ -136,12 +137,15 @@ const InnerDivB = styled("div")({
 const ChildDivA = styled("div")({
   display: "flex",
   flexWrap: "wrap",
-  gap: "20px", // ✅ gap added
+  gap: "20px",
+
   "@media (max-width: 768px)": {
     flexDirection: "column",
     gap: "16px",
+    alignItems: "center", // ✅ center cards
   },
 });
+
 
 const ChildDivB = styled("div")({
   display: "flex",
@@ -151,6 +155,8 @@ const ChildDivB = styled("div")({
   "@media (max-width: 768px)": {
     flexDirection: "column",
     gap: "16px",
+    alignItems: "center"
+
   },
 });
 
@@ -161,6 +167,8 @@ const ChildrenDivA = styled("div")({
   "@media (max-width: 768px)": {
     flexDirection: "column",
     gap: "16px",
+    alignItems: "center"
+
   },
 });
 
@@ -171,6 +179,8 @@ const ChildrenDivB = styled("div")({
   "@media (max-width: 768px)": {
     flexDirection: "column",
     gap: "16px",
+    alignItems: "center"
+
   },
 });
 
@@ -179,18 +189,29 @@ const CardSmall = styled("div")({
   flex: 1,
   minWidth: "250px",
   maxWidth: "100%",
-  marginBottom: "20px", // ✅ space between cards
+  marginBottom: "20px",
+
   "@media (max-width: 480px)": {
     minWidth: "100%",
     marginBottom: "16px",
+    marginLeft: "auto",   // ✅ center
+    marginRight: "auto",  // ✅ center
+    textAlign: "center",
+    
   },
 });
+
 
 const CardLarge = styled("div")({
   flex: 1,
   display: "flex",
   flexDirection: "column",
-  gap: "20px", // ✅ spacing inside large card stack
+  gap: "20px",
   minWidth: "250px",
   maxWidth: "100%",
+
+  "@media (max-width: 480px)": {
+    alignItems: "center", // ✅ center stacked cards
+  },
 });
+

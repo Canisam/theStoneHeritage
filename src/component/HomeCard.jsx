@@ -39,7 +39,7 @@ const HomeCard = ({ image, title, description, buttonText, link }) => {
           src={image}
           alt={title}
           sx={{
-            width: '100%',
+            width: { xs: '80vw', sm: '100%' },
             height: { xs: '30vh', sm: '30vh' },
             mb: 1,
             objectFit: 'cover',
