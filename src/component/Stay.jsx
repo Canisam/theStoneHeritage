@@ -37,6 +37,36 @@ const Stay = () => {
       roomUrl: "/Rooms/3",
       imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
+    {
+      id: "3",
+      imageBackgroundUrl: forestImg,
+      price: 3800,
+      heading: "Family Suite",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatum veniam dicta minus, facere nihil earum alias...",
+      roomUrl: "/Rooms/3",
+      imageSliderUrls: [forestImg, mountainImg, mudImg],
+    },
+    {
+      id: "3",
+      imageBackgroundUrl: forestImg,
+      price: 3800,
+      heading: "Family Suite",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatum veniam dicta minus, facere nihil earum alias...",
+      roomUrl: "/Rooms/3",
+      imageSliderUrls: [forestImg, mountainImg, mudImg],
+    },
+    {
+      id: "3",
+      imageBackgroundUrl: forestImg,
+      price: 3800,
+      heading: "Family Suite",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatum veniam dicta minus, facere nihil earum alias...",
+      roomUrl: "/Rooms/3",
+      imageSliderUrls: [forestImg, mountainImg, mudImg],
+    },
   ];
 
   return (
