@@ -1,0 +1,169 @@
+.card-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 45vh;
+  margin: auto;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.card-front {
+  background: no-repeat center center/cover;
+  background-image: var(--image-url);
+  background-size: cover;
+  color: white;
+}
+
+.card-back {
+  background-color: #fff;
+  color: #fff; 
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: left;
+}
+
+.card h2,
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+}
+
+.price {
+  font-size: 28px;
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #ddd;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+}
+
+button {
+  align-self: flex-start;
+  padding: 10px 15px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 1024px) {
+  .card-container {
+    height: 40vh;
+  }
+
+  .card-face {
+    padding: 20px;
+  }
+
+  .card p {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+  }
+
+  .price {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    height: 35vh;
+    padding: 8px;
+  }
+
+  .card h2,
+  .card h3 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .card p {
+    font-size: clamp(0.85rem, 3vw, 1rem);
+  }
+
+  .card button {
+    padding: 8px 16px;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    height: 30vh;
+    padding: 5px;
+  }
+
+  .card-face {
+    padding: 15px;
+  }
+
+  .card h2,
+  .card h3 {
+    font-size: clamp(0.9rem, 5vw, 1.25rem);
+  }
+
+  .card p {
+    font-size: clamp(0.8rem, 4vw, 0.9rem);
+  }
+
+  .price {
+    font-size: clamp(1rem, 5vw, 1.25rem);
+  }
+
+  .card button,
+  button {
+    padding: 6px 12px;
+    font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+  }
+}
