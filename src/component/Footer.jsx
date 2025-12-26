@@ -15,7 +15,7 @@ const Footer = () => {
           <SectionTitle>The Stone Heritage</SectionTitle>
           <MapWrapper>
             <Link to={"https://share.google/nJXFb3hclCotiPLKc"} style={{textDecoration:"none", color:"inherit"}}>
-            <img src="../src/assets/map.png" alt="Stone Heritage Map" />
+            <img src="/assets/map.png" alt="Stone Heritage Map" />
             </Link>
           </MapWrapper>
         </BrandColumn>
