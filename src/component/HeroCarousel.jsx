@@ -3,12 +3,12 @@ import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { useEffect, useRef, useState } from "react";
 
 const images = [
-  "../src/assets/i1.jpg",
-  "../src/assets/i2.jpg",
-  "../src/assets/i3.jpg",
-  "../src/assets/room1.png",
-  "../src/assets/room2.png",
-  "../src/assets/room3.png",
+  "/assets/i1.jpg",
+  "/assets/i2.jpg",
+  "/assets/i3.jpg",
+  "/assets/room1.png",
+  "/assets/room2.png",
+  "/assets/room3.png",
 ];
 
 const AUTO_SCROLL_DELAY = 4000;
@@ -20,11 +20,7 @@ export default function HeroCarousel() {
   const timeoutRef = useRef(null);
 
   // clone first & last
-  const slides = [
-    images[images.length - 1],
-    ...images,
-    images[0],
-  ];
+  const slides = [images[images.length - 1], ...images, images[0]];
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
