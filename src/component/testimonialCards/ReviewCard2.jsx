@@ -52,9 +52,7 @@ export default function TestimonialCard1({imgText, name, description }) {
                   </Typography>
 
 
-          <Typography variant="subtitle1" fontWeight="bold">
-                               {name&&name.length>0?name:"Saransh Tripathi"}
-                                </Typography>
+
       </CardContent>
     </ReviewCard>
   );

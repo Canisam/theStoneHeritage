@@ -13,18 +13,18 @@ const MainTestimonial = () => {
       <InnerDivA>
         <ChildDivA>
           <CardSmall>
-            <TestimonialCard2 imgText="/assets/testimonials/t4.png" />
+            <TestimonialCard2 imgText="/assets/testimonials/t4.png"  description="This was a perfect weekend getaway from Delhi to Mukteshwar. After a long drive, the peaceful vibe, stone architecture, and warm hospitality helped us unwind completely. Watching the sunset here was unforgettable." name="Khushi"/>
           </CardSmall>
           <CardSmall>
             {/* <PhotoCardTestimonial imgText="./testimonials/t2.jpg"  /> */}
-            <PhotoCardTestimonial imgText="/assets/testimonials/t2.jpg" description={"This place is special not just because it’s on the main state highway of Mukteshwar, but also because the staff are so friendly and helpful. When I reached earlier than planned, they let me check in right away with no problems."}/>
+            <PhotoCardTestimonial imgText="/assets/testimonials/t2.jpg" description={"This place is special not just because it’s on the main state highway of Mukteshwar, but also because the staff are so friendly and helpful. When I reached earlier than planned, they let me check in right away with no problems."} name="Akash" position=" "/>
           
           </CardSmall>
         </ChildDivA>
         <ChildDivB>
           <CardLarge>
-            <PhotoCardTestimonial2 imgText="/assets/testimonials/t1.jpg" description={"My holiday at Stone Heritage Mukteshwar was unforgettable. Spacious rooms, beautiful gardens, and attentive service—it was everything we wanted and more. Truly the best place to enjoy Mukteshwar’s natural beauty and hospitality."} />
-            <TestimonialCard1 imgText="/assets/testimonials/t8.jpg" description="The property is really pretty and beautifully located. The host and staff are friendly and helpful. Few cafés, restaurants and markets are all close by. It’s a perfect place for family, friends, or couple’s getaway..would surely recommend it :)"  />
+            <PhotoCardTestimonial2 imgText="/assets/testimonials/t1.jpg" description="Stone Heritage Mukteshwar is a great budget homestay in Mukteshwar, Uttarakhand without compromising on experience. Clean rooms, beautiful views, and excellent hospitality make it great value for money." name="Saransh" position="Software Developer"/>
+            <TestimonialCard1 imgText="/assets/testimonials/t8.jpg" description="We enjoyed early morning nature walks and small hikes around the property. Coming back to hot food and tea was the best feeling. This place is ideal for people who love slow travel and nature." name="Lotte"  />
              
           </CardLarge>
            
@@ -35,19 +35,19 @@ const MainTestimonial = () => {
       <InnerDivB>
         <ChildrenDivA>
           <CardSmall>
-            <PhotoCardTestimonial2 imgText="/assets/testimonials/t3.jpg" />
-          </CardSmall>
+            <PhotoCardTestimonial2 imgText="/assets/testimonials/t3.jpg" name="Rashmi Negi" description="The pure vegetarian food prepared by chef Akshay was delicious and homely. Pawan and Naveen took great care of us and made sure everything was comfortable. A wonderful experience overall." position=" "/>
+          </CardSmall> 
           <CardSmall>
-            <TestimonialCard1 imgText="/assets/testimonials/t5.jpg" description="Absolutely loved my stay at Stone Heritage Mumteshwar! The room was great, service was excellent. Every staff member was super helpful and friendly"/>
+            <TestimonialCard1 imgText="/assets/testimonials/t5.jpg" description="Traveling with family felt very comfortable here. Pawan and Naveen were always helpful, and the calm atmosphere made it perfect for a relaxed family stay. Definitely one of the best family homestays in Mukteshwar." name="Sakshi" />
           </CardSmall>
         </ChildrenDivA>
         <ChildrenDivB>
           <CardSmall>
-            <TestimonialCard2 imgText="/assets/testimonials/t6.png" description="Good experience with scenic view from the garden. Stone rooms make you feel living in castle."/>
+            <TestimonialCard2 imgText="/assets/testimonials/t6.png" description="We chose this place for a short weekend trip from Delhi, mainly because it’s pet-friendly. It turned out to be a great decision. Peaceful location, friendly staff, and lots of open space for our pet." name="Nikhil" position=" "/>
           </CardSmall>
           <CardSmall>
             
-            <PhotoCardTestimonial imgText="/assets/testimonials/t7.jpg" />
+            <PhotoCardTestimonial imgText="/assets/testimonials/t7.jpg" description="Stone Heritage Mukteshwar is an ideal choice if you’re looking for a family-friendly, pet-friendly, budget homestay in Mukteshwar. With good WiFi for workation, tasty vegetarian food, and beautiful sunsets, it offers a complete hill-stay experience." name="Gagan" position="- Maati Living"/>
           </CardSmall>
         </ChildrenDivB>
       </InnerDivB>
