@@ -1,72 +1,85 @@
-import React from "react";
 import RoomsCard from "./RoomsCard";
 import NavBar from "./NavBar";
 
-import forestImg from "/assets/room1.png";
-import mountainImg from "/assets/room2.png";
-import mudImg from "/assets/room3.png";
+import BrassRoom from "/public/assets/stay/BrassRoom.jpeg"
+import CopperRoom from "/public/assets/stay/CopperRoom.jpeg"
+import IronRoom from "/public/assets/stay/IronRoom.jpeg"
+import StoneStoryRoom from "/public/assets/stay/stoneandstoryroom.jpeg"
+import StoneFamilyRoom from "/public/assets/stay/stonewoodfamilyretreat.jpeg"
+import VintageRoom from "/public/assets/stay/thevintageroom.jpeg"
+import CedarRoom from "/public/assets/stay/cedarroom.jpeg"
 import FloatingWhatsApp from "./FloatingWhatsApp";
+import Footer from "./Footer";
 
 const Stay = () => {
   const data = [
     {
       id: "1",
-      imageBackgroundUrl: mudImg,
+      imageBackgroundUrl: BrassRoom,
       heading: "Brass Room",
       description:
         "3 Guest . 1 Bedroom . 1 King Bed . 1 Floor Matteress . Private Washroom",
       roomUrl: "/Rooms/1",
-      imageSliderUrls: [forestImg, mountainImg, mudImg],
+      // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
     {
       id: "2",
-      imageBackgroundUrl: mountainImg,
-      price: 2567.01,
-      heading: "Deluxe Suite",
+      imageBackgroundUrl: CopperRoom,
+      // price: 2567.01,
+      heading: "Copper Room",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatum veniam dicta minus, facere nihil earum alias...",
+        "1 King Bed . 1 Single Bed",
       roomUrl: "/Rooms/2",
-      imageSliderUrls: [forestImg, mountainImg, mudImg],
+      // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
     {
       id: "3",
-      imageBackgroundUrl: forestImg,
-      price: 3800,
-      heading: "Family Suite",
+      imageBackgroundUrl: VintageRoom,
+      // price: 3800,
+      heading: "The Vintage Room",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatum veniam dicta minus, facere nihil earum alias...",
+        "1 King Bed",
       roomUrl: "/Rooms/3",
-      imageSliderUrls: [forestImg, mountainImg, mudImg],
+      // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
     {
-      id: "3",
-      imageBackgroundUrl: forestImg,
-      price: 3800,
-      heading: "Family Suite",
+      id: "4",
+      imageBackgroundUrl: StoneFamilyRoom,
+      // price: 3800,
+      heading: "Stonewood Family Retreat",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatum veniam dicta minus, facere nihil earum alias...",
+        "2 King Bed",
       roomUrl: "/Rooms/3",
-      imageSliderUrls: [forestImg, mountainImg, mudImg],
+      // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
     {
-      id: "3",
-      imageBackgroundUrl: forestImg,
-      price: 3800,
-      heading: "Family Suite",
+      id: "5",
+      imageBackgroundUrl: StoneStoryRoom,
+      // price: 3800,
+      heading: "Stone And Story room",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatum veniam dicta minus, facere nihil earum alias...",
+        "1 King Bed",
       roomUrl: "/Rooms/3",
-      imageSliderUrls: [forestImg, mountainImg, mudImg],
+      // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
     {
-      id: "3",
-      imageBackgroundUrl: forestImg,
-      price: 3800,
-      heading: "Family Suite",
+      id: "6",
+      imageBackgroundUrl: IronRoom,
+      // price: 3800,
+      heading: "Iron Room",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatum veniam dicta minus, facere nihil earum alias...",
-      roomUrl: "/Rooms/3",
-      imageSliderUrls: [forestImg, mountainImg, mudImg],
+        "1 King Bed",
+           roomUrl: "/Rooms/3",
+      // imageSliderUrls: [forestImg, mountainImg, mudImg],
+    },
+    {
+      id: "7",
+      imageBackgroundUrl: CedarRoom,
+      // price: 3800,
+      heading: "Cedar Room",
+      description:""
+       ,roomUrl: "/Rooms/3",
+      // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
   ];
 
@@ -78,9 +91,8 @@ const Stay = () => {
       <main className="flex-1 px-clamp py-clamp">
         <RoomsCard data={data} />
       </main>
-      <footer className="mt-auto text-center py-4 text-sm text-gray-600">
-        © {new Date().getFullYear()} Stay Inn. All rights reserved.
-      </footer>
+
+      <Footer></Footer>
       <FloatingWhatsApp />
     </div>
   );

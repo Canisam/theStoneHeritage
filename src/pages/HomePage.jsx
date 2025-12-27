@@ -32,7 +32,7 @@ const HomePage = () => {
   return (
     <Box sx={{ width: "100%", overflowX: "hidden" }}>
       <NavBar />
-      <HeroCarousel />
+      <HeroCarousel id={0}/>
 
       {/* Cards Section */}
       <Box

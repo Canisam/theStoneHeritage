@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { styled } from "@mui/material";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -8,16 +8,30 @@ import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 const NavBar = () => {
   const navItems = ["Stay", "Experiences", "Volunteer", "Book Now"];
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef(null);
 
-  const toggleMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  // ✅ close on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <NavBarMainComponent>
       <Logo>
         <Link
-          to={"/"}
+          to="/"
           style={{
             textDecoration: "none",
             color: "#984216",
@@ -25,31 +39,34 @@ const NavBar = () => {
             alignItems: "center",
           }}
         >
-          <img src={"/main-logo.png?w=164&h=164&fit=crop&auto=format"} alt="Logo" />
+          <img src="/main-logo.png" alt="Logo" />
           <span>The Stone Heritage</span>
         </Link>
       </Logo>
 
-      <HamburgerIcon onClick={toggleMenu}>
+      <HamburgerIcon onClick={() => setMobileMenuOpen((p) => !p)}>
         {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
       </HamburgerIcon>
 
-      <NavItemsContainer open={mobileMenuOpen}>
+      <NavItemsContainer
+        ref={menuRef}
+        open={mobileMenuOpen}
+        onClick={(e) => e.stopPropagation()} // 🔥 KEY FIX
+      >
         {navItems.map((item, i) => (
           <NavItem key={i} onClick={() => setMobileMenuOpen(false)}>
             {item === "Book Now" ? (
               <a
                 href="tel:+917900200563"
-                target="_blank"
                 style={{ textDecoration: "none", color: "#984216" }}
               >
                 <BookNowButton>
-                  <PhoneInTalkIcon /> &nbsp; {item}
+                  <PhoneInTalkIcon /> {item}
                 </BookNowButton>
               </a>
             ) : (
               <Link
-                to={"/" + item.replace(/\s+/g, "")}
+                to={`/${item.replace(/\s+/g, "")}`}
                 style={{ textDecoration: "none", color: "#984216" }}
               >
                 {item}
@@ -63,6 +80,7 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
 
 /* ——— styled components ——— */
 
@@ -105,12 +123,18 @@ const NavItemsContainer = styled("div")`
     background-color: #dda15e;
     flex-direction: column;
     width: 100%;
+
     padding: ${({ open }) => (open ? "1.2rem 0" : "0")};
     opacity: ${({ open }) => (open ? "1" : "0")};
+    pointer-events: ${({ open }) => (open ? "auto" : "none")}; /* 🔥 KEY FIX */
+    max-height: ${({ open }) => (open ? "400px" : "0")};
+
     overflow: hidden;
     gap: 1.2rem;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
   }
 `;
+
 
 
 const NavItem = styled("div")`

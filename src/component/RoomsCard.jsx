@@ -37,7 +37,7 @@ const RoomsCard = ({ data = [] }) => {
 
               <Link
                 to={room.roomUrl}
-                state={{ price: room.price }}
+                state={{ price: room.price, name: room.heading }}
                 style={{ textDecoration: "none" }}
               >
                 <ContentButton>

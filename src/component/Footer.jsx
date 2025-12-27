@@ -11,8 +11,8 @@ const Footer = () => {
       <FooterGrid>
 
         {/* Brand / Map */}
-        <BrandColumn>
-          <SectionTitle>The Stone Heritage</SectionTitle>
+        <BrandColumn style={{display:"flex",  alignItems:"center"}}>
+          <SectionTitle >The Stone Heritage</SectionTitle>
           <MapWrapper>
             <Link to={"https://share.google/nJXFb3hclCotiPLKc"} style={{textDecoration:"none", color:"inherit"}}>
             <img src="/assets/map.png" alt="Stone Heritage Map" />
@@ -72,7 +72,7 @@ const Footer = () => {
 
       <BottomBar>
         <span>© 2025 Stone Heritage. All Rights Reserved.</span>
-        <span>📍 Mukteshwar, Uttarakhand 263138</span>
+  
       </BottomBar>
     </FooterWrapper>
   );
@@ -90,6 +90,7 @@ const FooterGrid = styled("div")`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
+  
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -105,13 +106,12 @@ const FooterColumn = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 14px;
-  text-align: ${({ align }) => align || "left"};
 
   @media (max-width: 600px) {
-    text-align: center;
     align-items: center;
   }
 `;
+
 
 const BrandColumn = styled(FooterColumn)`
   align-items: flex-start;
@@ -121,11 +121,18 @@ const BrandColumn = styled(FooterColumn)`
   }
 `;
 
+
 const SectionTitle = styled("h4")`
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 12px;
+  line-height: 1.2;
+
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 `;
+
 
 const MapWrapper = styled("div")`
   width: 100%;
@@ -144,6 +151,20 @@ const MapWrapper = styled("div")`
     transform: scale(1.05);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
   }
+
+  /* 🚀 MOBILE FULL-WIDTH ESCAPE */
+  @media (max-width: 600px) {
+    width: 100vw;
+    max-width: 100vw;
+
+    /* cancel footer padding */
+    margin-left: calc(-1 * 4vw);
+    margin-right: calc(-1 * 4vw);
+
+    img {
+      border-radius: 0;
+    }
+  }
 `;
 
 
@@ -159,7 +180,7 @@ const FooterLink = styled("span")`
 `;
 
 const ContactText = styled("p")`
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   opacity: 0.9;
 `;
@@ -189,10 +210,11 @@ const BottomBar = styled("div")`
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 
   padding-top: 15px;
-
+  font-style: bold;
   display: flex;
-  justify-content: space-between;
-  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
   opacity: 0.85;
 
   @media (max-width: 600px) {

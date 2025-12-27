@@ -1,9 +1,8 @@
 import React from "react";
 import { styled } from "@mui/material";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useLocation, useParams, Link } from "react-router-dom";
 
 import NavBar from "./NavBar";
-import Bookings from "./Bookings";
 import FeaturesCard from "./FeaturesCard";
 
 import SignalWifi4BarIcon from "@mui/icons-material/SignalWifi4Bar";
@@ -13,16 +12,17 @@ import RoomServiceIcon from "@mui/icons-material/RoomService";
 import LocalParkingIcon from "@mui/icons-material/LocalParking";
 import Footer from "./Footer";
 import FloatingWhatsApp from "./FloatingWhatsApp";
+import HeroCarousel from "./HeroCarousel";
 const Rooms = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { id: roomId } = useParams();
-
   const pricePerNight =
     Number(location.state?.pricePerNight) ||
     Number(location.state?.price) ||
     0;
-
+const roomName = location.state?.name || "Accomodation"
+console.log("Room", roomName);
   const amenities = [
     {
       logo: <SignalWifi4BarIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
@@ -68,20 +68,22 @@ const Rooms = () => {
         "Quiet residential area just 5 min from the city centre. Cafés and shops are within walking distance.",
     },
   ];
+const message = `👋 Hi Akash!
 
-  const goToAvailability = () =>
-    navigate("/Availability", {
-      state: { pricePerNight, roomId },
-    });
+🏡 I’m interested in booking the *${roomName}* at The Stone Heritage.
+
+📅 Could you please share the availability and pricing details?
+
+🙏 Looking forward to your response.
+Thanks! 😊`;
+
 
   return (
     <>
       <NavBar />
+    <HeroCarousel id={parseInt(roomId, 10)}/>
       <Wrapper>
         <Container>
-          <ImageSlider>
-            <Bookings />
-          </ImageSlider>
 
           <Description>
             <Heading>About this space</Heading>
@@ -116,13 +118,18 @@ const Rooms = () => {
                 ? `₹${pricePerNight.toLocaleString()} / night`
                 : "Price on request"}
             </Nightly>
-            <AvailabilityBtn onClick={goToAvailability}>
+          <Link
+  to={`https://api.whatsapp.com/send?phone=917900200563&text=${encodeURIComponent(message)}`}
+  target="_blank"
+  style={{ textDecoration: "none" }}
+>  <AvailabilityBtn >
               Check Availability
             </AvailabilityBtn>
+            </Link>
           </CheckAvailability>
         </Container>
       </Wrapper>
-      <Footer/>
+      
       <FloatingWhatsApp/>
     </>
   );
@@ -132,7 +139,7 @@ export default Rooms;
 
 /* ---------- styled ---------- */
 const Wrapper = styled("div")`
-  width: 95%;
+ 
   max-width: 1400px;
   min-height: 100vh;
   margin: auto;
