@@ -1,6 +1,7 @@
-import { Box, IconButton, Skeleton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { useEffect, useMemo, useRef, useState } from "react";
+import LoadingOverlay from "./LoadingOverlay";
 
 const AUTO_SCROLL_DELAY = 4000;
 
@@ -17,7 +18,7 @@ const IMAGE_GROUPS = [
       "/assets/stay/cedarroom.jpeg",
     ],
   },
-  {
+    {
     id: 1,
     images: [
       "/assets/stay/BrassRoom/1.jpeg",
@@ -29,64 +30,48 @@ const IMAGE_GROUPS = [
       "/assets/stay/BrassRoom/7.jpeg",
     ],
   },
-  {
-    id: 2,
-    images: [
-      "/assets/i1.jpg",
-      "/assets/i2.jpg",
-      "/assets/i3.jpg",
-      "/assets/room1.png",
-      "/assets/room2.png",
-      "/assets/room3.png",
-    ],
-  },
 ];
 
 export default function HeroCarousel({ id = 0 }) {
-  const [index, setIndex] = useState(1);
-  const [transition, setTransition] = useState(true);
-  const [loaded, setLoaded] = useState({});
-  const timeoutRef = useRef(null);
-
-  // 🔥 normalize id (router params are strings)
   const roomId = Number(id);
 
-  // get images for room
-  const activeImages = useMemo(() => {
-    return IMAGE_GROUPS.find(g => g.id === roomId)?.images ?? [];
-  }, [roomId]);
+  const images =
+    IMAGE_GROUPS.find(g => g.id === roomId)?.images ?? [];
 
-  // clone for infinite scroll
   const slides = useMemo(() => {
-    if (!activeImages.length) return [];
-    return [
-      activeImages[activeImages.length - 1],
-      ...activeImages,
-      activeImages[0],
-    ];
-  }, [activeImages]);
+    if (!images.length) return [];
+    return [images[images.length - 1], ...images, images[0]];
+  }, [images]);
 
-  // reset when room changes
+  const [index, setIndex] = useState(1);
+  const [transition, setTransition] = useState(true);
+  const [loaded, setLoaded] = useState(() => ({}));
+  const timer = useRef();
+
+  // ✅ preload & mark loaded by src
   useEffect(() => {
-    setIndex(1);
-    setLoaded({});
-  }, [roomId]);
+    const map = {};
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        map[src] = true;
+        setLoaded(prev => ({ ...prev, [src]: true }));
+      };
+    });
+  }, [images]);
 
   // autoplay
   useEffect(() => {
-    if (!slides.length) return;
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => {
+      setIndex(p => p + 1);
+    }, AUTO_SCROLL_DELAY);
+    return () => clearTimeout(timer.current);
+  }, [index]);
 
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(
-      () => setIndex(p => p + 1),
-      AUTO_SCROLL_DELAY
-    );
-
-    return () => clearTimeout(timeoutRef.current);
-  }, [index, slides.length]);
-
-  // infinite jump handler
-  const handleTransitionEnd = () => {
+  // infinite loop jump
+  const onTransitionEnd = () => {
     if (index === slides.length - 1) {
       setTransition(false);
       setIndex(1);
@@ -96,102 +81,72 @@ export default function HeroCarousel({ id = 0 }) {
     }
   };
 
-  // re-enable animation after jump
+  // re-enable animation
   useEffect(() => {
     if (!transition) {
       requestAnimationFrame(() => setTransition(true));
     }
   }, [transition]);
 
-  // preload images (prevents flash)
-  useEffect(() => {
-    activeImages.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, [activeImages]);
-
   if (!slides.length) return null;
 
   return (
-    <Box sx={{ position: "relative", height: "50vh", overflow: "hidden" }}>
-      {/* Slides */}
+    <Box sx={{ height: "50vh", overflow: "hidden", position: "relative" }}>
       <Box
-        onTransitionEnd={handleTransitionEnd}
+        onTransitionEnd={onTransitionEnd}
         sx={{
           display: "flex",
           height: "100%",
           transform: `translateX(-${index * 100}%)`,
-          transition: transition ? "transform 0.8s ease-in-out" : "none",
+          transition: transition ? "transform .8s ease" : "none",
         }}
       >
         {slides.map((src, i) => (
-          <Box
-            key={`${src}-${i}`}
-            sx={{ minWidth: "100%", position: "relative" }}
-          >
-            {/* Skeleton */}
-            {!loaded[src] && (
-              <Skeleton
-                variant="rectangular"
-                width="100%"
-                height="100%"
-              />
-            )}
-
-            {/* Image */}
+          <Box key={`${src}-${i}`} sx={{ minWidth: "100%", position: "relative" }}>
+            {!loaded[src] && <LoadingOverlay />}
             <Box
               component="img"
               src={src}
-              alt={`slide-${i}`}
-              onLoad={() =>
-                setLoaded(prev => ({ ...prev, [src]: true }))
-              }
               sx={{
+                position: "absolute",
+                inset: 0,
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                position: "absolute",
-                inset: 0,
                 opacity: loaded[src] ? 1 : 0,
-                transition: "opacity 0.4s ease",
+                transition: "opacity .4s ease",
               }}
             />
           </Box>
         ))}
       </Box>
 
-      {/* Left Arrow */}
       <IconButton
-        onClick={() => setIndex(p => p - 1)}
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: 16,
-          transform: "translateY(-50%)",
-          color: "#fff",
-          background: "rgba(0,0,0,0.35)",
-          "&:hover": { background: "rgba(0,0,0,0.55)" },
-        }}
+        onClick={() => setIndex(i => i - 1)}
+        sx={{ position: "absolute", left: 16, top: "50%", color: "#fff" }}
       >
         <ChevronLeft />
       </IconButton>
 
-      {/* Right Arrow */}
       <IconButton
-        onClick={() => setIndex(p => p + 1)}
-        sx={{
-          position: "absolute",
-          top: "50%",
-          right: 16,
-          transform: "translateY(-50%)",
-          color: "#fff",
-          background: "rgba(0,0,0,0.35)",
-          "&:hover": { background: "rgba(0,0,0,0.55)" },
-        }}
+        onClick={() => setIndex(i => i + 1)}
+        sx={{ position: "absolute", right: 16, top: "50%", color: "#fff" }}
       >
         <ChevronRight />
       </IconButton>
     </Box>
   );
 }
+
+
+/* ---------------- STYLES ---------------- */
+
+const arrowStyle = side => ({
+  position: "absolute",
+  top: "50%",
+  [side]: 16,
+  transform: "translateY(-50%)",
+  color: "#fff",
+  background: "rgba(0,0,0,0.35)",
+  "&:hover": { background: "rgba(0,0,0,0.55)" },
+});
