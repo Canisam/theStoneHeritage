@@ -11,7 +11,8 @@ import AcUnitIcon from "@mui/icons-material/AcUnit";
 import ConnectedTvIcon from "@mui/icons-material/ConnectedTv";
 import RoomServiceIcon from "@mui/icons-material/RoomService";
 import LocalParkingIcon from "@mui/icons-material/LocalParking";
-
+import Footer from "./Footer";
+import FloatingWhatsApp from "./FloatingWhatsApp";
 const Rooms = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -121,6 +122,8 @@ const Rooms = () => {
           </CheckAvailability>
         </Container>
       </Wrapper>
+      <Footer/>
+      <FloatingWhatsApp/>
     </>
   );
 };

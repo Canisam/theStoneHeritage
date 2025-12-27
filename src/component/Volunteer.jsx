@@ -10,7 +10,8 @@ import FeaturesCard from "./FeaturesCard";
 import HeroSectionVolunteer from "./HeroSectionVolunteer";
 import BgMap from "/assets/bg-map.png";
 import NavBar from "./NavBar";
-
+import Footer from "./Footer";
+import FloatingWhatsApp from "./FloatingWhatsApp";
 const Volunteer = () => {
   const skills = [
     {
@@ -69,6 +70,7 @@ const Volunteer = () => {
   ];
 
   return (
+    <>
     <PageWrapper>
       <NavBar />
       <HeroSectionVolunteer />
@@ -97,6 +99,9 @@ const Volunteer = () => {
         ))}
       </HorizontalScroll>
     </PageWrapper>
+            <Footer></Footer>
+      <FloatingWhatsApp></FloatingWhatsApp>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import forestImg from "/assets/room1.png";
 import mountainImg from "/assets/room2.png";
 import mudImg from "/assets/room3.png";
+import FloatingWhatsApp from "./FloatingWhatsApp";
 
 const Stay = () => {
   const data = [
@@ -80,6 +81,7 @@ const Stay = () => {
       <footer className="mt-auto text-center py-4 text-sm text-gray-600">
         © {new Date().getFullYear()} Stay Inn. All rights reserved.
       </footer>
+      <FloatingWhatsApp />
     </div>
   );
 };

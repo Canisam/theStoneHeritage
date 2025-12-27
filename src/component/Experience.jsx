@@ -5,6 +5,8 @@ import cabinImage from "/assets/cabin.jpg";
 import mountainImage from "/assets/mainbg.png";
 import NavBar from "./NavBar";
 import FlipCard from "./FlipCard";
+import FloatingWhatsApp from "./FloatingWhatsApp";
+import Footer from "./Footer"
 
 const experienceActivities = [
   {
@@ -105,6 +107,8 @@ const Experience = () => {
           imageUrl={activity.imageUrl}
         />
       ))}
+      <Footer></Footer>
+      <FloatingWhatsApp></FloatingWhatsApp>
     </>
   );
 };
