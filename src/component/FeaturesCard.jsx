@@ -3,6 +3,7 @@ import { styled } from "@mui/material";
 
 const FeaturesCard = ({ logo, text, description }) => {
   return (
+    // <CardsWrapper>
     <CardContainer role="article" aria-label={text}>
       <Logo aria-hidden="true">{logo}</Logo>
       <Content>
@@ -10,6 +11,7 @@ const FeaturesCard = ({ logo, text, description }) => {
         <Description>{description}</Description>
       </Content>
     </CardContainer>
+    // </CardsWrapper>
   );
 };
 
@@ -38,14 +40,19 @@ const CardContainer = styled("div")`
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
   }
 
+  /* Tablet: 2 per row */
   @media (max-width: 768px) {
     flex: 1 1 45%;
-    max-width: 100%;
+    max-width: 45%;
   }
 
+  /* Mobile: 3 per row */
   @media (max-width: 480px) {
-    flex: 1 1 100%;
-    max-width: 100%;
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 10px;
   }
 `;
 
@@ -53,11 +60,16 @@ const Logo = styled("div")`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: clamp(0.6rem, 2vw, 0.75rem);
+  margin-bottom: 0.35rem;
 
   svg {
-    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-size: 2rem;
     color: #384b42;
+  }
+  @media (max-width: 480px) {
+    svg {
+      font-size: 1.6rem;
+    }
   }
 `;
 
@@ -71,13 +83,30 @@ const Content = styled("div")`
 const Heading = styled("h3")`
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   font-weight: 700;
-  margin-bottom: clamp(0.4rem, 1.5vw, 0.6rem);
+  margin-bottom: 0.4rem;
   color: #222;
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
 `;
+
 
 const Description = styled("p")`
   font-size: clamp(0.85rem, 2.2vw, 0.95rem);
   color: #555;
   line-height: 1.5;
   margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
 `;
+
+const CardsWrapper = styled("div")`
+  display: flex;
+  flex-wrap: wrap;
+`;
+

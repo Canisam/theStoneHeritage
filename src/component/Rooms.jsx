@@ -103,6 +103,7 @@ Thanks! 😊`;
 
           <Features>
             {amenities.map(({ logo, text, description }, i) => (
+              
               <FeaturesCard
                 key={i}
                 logo={logo}
@@ -160,12 +161,18 @@ const ImageSlider = styled("div")`
 const Features = styled("div")`
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(0.5rem, 1vw, 1rem);
+  justify-content: center;
+  gap: 0.75rem;  
   margin-top: 1.5rem;
   margin-bottom: 12vh;
-  align-items: stretch;
-  justify-content: center;
+
+  /* Mobile: allow wrapping (IMPORTANT) */
+  @media (max-width: 480px) {
+    justify-content: flex-start;
+    gap: 0rem;  
+  }
 `;
+
 
 const Description = styled("div")`
   display: flex;
