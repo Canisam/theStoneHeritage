@@ -30,6 +30,64 @@ const IMAGE_GROUPS = [
       "/assets/stay/BrassRoom/7.jpeg",
     ],
   },
+    {
+    id: 2,
+    images: [
+      "/assets/stay/CopperRoom/copperRoom1.jpeg",
+      "/assets/stay/CopperRoom/copperRoom2.jpeg",
+      "/assets/stay/CopperRoom/copperRoom3.jpeg",
+      "/assets/stay/CopperRoom/copperRoom4.jpeg",
+      "/assets/stay/CopperRoom/copperRoom6.jpeg",
+      "/assets/stay/CopperRoom/copperRoom7.jpeg",
+    ],
+  },
+    {
+    id: 3,
+    images: [
+      "/assets/stay/VintageStoneRoom/vintageStoneRoom1.jpeg",
+      "/assets/stay/VintageStoneRoom/vintageStoneRoom2.jpeg",
+      "/assets/stay/VintageStoneRoom/vintageStoneRoom3.jpeg",
+      "/assets/stay/VintageStoneRoom/vintageStoneRoom4.jpeg",
+      "/assets/stay/VintageStoneRoom/vintageStoneRoom5.jpeg",
+      "/assets/stay/VintageStoneRoom/vintageStoneRoom6.jpeg",
+    ],
+  },
+    {
+    id: 4,
+    images: [
+      "/assets/stay/StonewoodFamilyRetreat/stonewoodFamilyRetreat1.jpeg",
+      "/assets/stay/StonewoodFamilyRetreat/stonewoodFamilyRetreat2.jpeg",
+      "/assets/stay/StonewoodFamilyRetreat/stonewoodFamilyRetreat3.jpeg",
+      "/assets/stay/StonewoodFamilyRetreat/stonewoodFamilyRetreat4.jpeg",
+    ],
+  },
+    {
+    id: 5,
+    images: [
+      "/assets/stay/StoneStoryRoom/stoneStoryRoom1.jpeg",
+      "/assets/stay/StoneStoryRoom/stoneStoryRoom2.jpeg",
+      "/assets/stay/StoneStoryRoom/stoneStoryRoom3.jpeg",
+      "/assets/stay/StoneStoryRoom/stoneStoryRoom4.jpeg",
+    ],
+  },
+    {
+    id: 6,
+    images: [
+      "/assets/stay/IronRoom/ironRoom1.jpeg",
+      "/assets/stay/IronRoom/ironRoom2.jpeg",
+      "/assets/stay/IronRoom/ironRoom3.jpeg",
+      "/assets/stay/IronRoom/ironRoom4.jpeg",
+    ],
+  },
+    {
+    id: 7,
+    images: [
+      "/assets/stay/CedarRoom/cedarRoom1.jpeg",
+      "/assets/stay/CedarRoom/cedarRoom2.jpeg",
+      "/assets/stay/CedarRoom/cedarRoom3.jpeg",
+      "/assets/stay/CedarRoom/cedarRoom4.jpeg",
+    ],
+  },
 ];
 
 export default function HeroCarousel({ id = 0 }) {
@@ -91,7 +149,7 @@ export default function HeroCarousel({ id = 0 }) {
   if (!slides.length) return null;
 
   return (
-    <Box sx={{ height: "50vh", overflow: "hidden", position: "relative" }}>
+    <Box sx={{ height: "60vh", overflow: "hidden", position: "relative" }}>
       <Box
         onTransitionEnd={onTransitionEnd}
         sx={{

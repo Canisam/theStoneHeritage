@@ -49,7 +49,7 @@ const Stay = () => {
       heading: "Stonewood Family Retreat",
       description:
         "2 King Bed",
-      roomUrl: "/Rooms/3",
+      roomUrl: "/Rooms/4",
       // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
     {
@@ -59,7 +59,7 @@ const Stay = () => {
       heading: "Stone And Story room",
       description:
         "1 King Bed",
-      roomUrl: "/Rooms/3",
+      roomUrl: "/Rooms/5",
       // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
     {
@@ -69,7 +69,7 @@ const Stay = () => {
       heading: "Iron Room",
       description:
         "1 King Bed",
-           roomUrl: "/Rooms/3",
+           roomUrl: "/Rooms/6",
       // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
     {
@@ -78,7 +78,7 @@ const Stay = () => {
       // price: 3800,
       heading: "Cedar Room",
       description:""
-       ,roomUrl: "/Rooms/3",
+       ,roomUrl: "/Rooms/7",
       // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
   ];

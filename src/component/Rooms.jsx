@@ -10,64 +10,156 @@ import AcUnitIcon from "@mui/icons-material/AcUnit";
 import ConnectedTvIcon from "@mui/icons-material/ConnectedTv";
 import RoomServiceIcon from "@mui/icons-material/RoomService";
 import LocalParkingIcon from "@mui/icons-material/LocalParking";
-import Footer from "./Footer";
 import FloatingWhatsApp from "./FloatingWhatsApp";
 import HeroCarousel from "./HeroCarousel";
 const Rooms = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { id: roomId } = useParams();
+  const { id } = useParams();
+const roomId = Number(id);
+
   const pricePerNight =
     Number(location.state?.pricePerNight) ||
     Number(location.state?.price) ||
     0;
 const roomName = location.state?.name || "Accomodation"
-console.log("Room", roomName);
-  const amenities = [
-    {
-      logo: <SignalWifi4BarIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-      text: "Free Wi-Fi",
-      description: "High-speed wireless internet available 24/7.",
-    },
-    {
-      logo: <AcUnitIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-      text: "Air-Conditioning",
-      description: "Stay cool and comfortable all year round.",
-    },
-    {
-      logo: <ConnectedTvIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-      text: "Smart TV",
-      description: "Watch your favourites on a 42-inch smart TV.",
-    },
-    {
-      logo: <RoomServiceIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-      text: "Room Service",
-      description: "On-demand food and beverage delivery.",
-    },
-    {
-      logo: <LocalParkingIcon sx={{ fontSize: "clamp(36px,4vw,50px)", color: "#384b42" }} />,
-      text: "Free Parking",
-      description: "Secure, on-site parking is included.",
-    },
-  ];
+// console.log("Room", roomName);
+//   const amenities = [
+//     {
+//       logo: <SignalWifi4BarIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+//       text: "Free Wi-Fi",
+//       description: "High-speed wireless internet available 24/7.",
+//     },
+//     {
+//       logo: <AcUnitIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+//       text: "Air-Conditioning",
+//       description: "Stay cool and comfortable all year round.",
+//     },
+//     {
+//       logo: <ConnectedTvIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+//       text: "Smart TV",
+//       description: "Watch your favourites on a 42-inch smart TV.",
+//     },
+//     {
+//       logo: <RoomServiceIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+//       text: "Room Service",
+//       description: "On-demand food and beverage delivery.",
+//     },
+//     {
+//       logo: <LocalParkingIcon sx={{ fontSize: "clamp(36px,4vw,50px)", color: "#384b42" }} />,
+//       text: "Free Parking",
+//       description: "Secure, on-site parking is included.",
+//     },
+//   ];
 
-  const description = [
-    {
-      subheading: "Guest Access",
-      content:
-        "You'll have full access to the apartment, balcony and kitchen—make yourself at home!",
-    },
-    {
-      subheading: "Other Things to Note",
-      content:
-        "Fresh linens, toiletries and a welcome kit provided. Please respect the house rules.",
-    },
-    {
-      subheading: "Neighborhood",
-      content:
-        "Quiet residential area just 5 min from the city centre. Cafés and shops are within walking distance.",
-    },
-  ];
+//   const description = [
+//     {
+//       subheading: "Guest Access",
+//       content:
+//         "You'll have full access to the apartment, balcony and kitchen—make yourself at home!",
+//     },
+//     {
+//       subheading: "Other Things to Note",
+//       content:
+//         "Fresh linens, toiletries and a welcome kit provided. Please respect the house rules.",
+//     },
+//     {
+//       subheading: "Neighborhood",
+//       content:
+//         "Quiet residential area just 5 min from the city centre. Cafés and shops are within walking distance.",
+//     },
+//   ];
+const ROOMS_DATA = {
+  1: {
+    aboutIntro:
+    "Stone Heritage, Mukteshwar A Boutique Heritage Escape Stone Heritage is a handcrafted boutique stay set in a restored heritage building in the Kumaon Hills of Uttarakhand. With rustic stone architecture, antique dcor, and cozy interiors, it offers a unique blend of heritage charm and modern comfort. The property features 7 boutique rooms, each thoughtfully designed to create a warm and homely atmosphere. Guests can enjoy wholesome vegetarian meals, unwind by the fireplace, and soak in the peaceful mountain vibes. Perfectly placed to capture both sunrise and sunset views, Stone Heritage is surrounded by lush greenery and scenic trails, making it ideal for nature lovers and those seeking a serene escape. Its convenient on-road parking on the state highway ensures easy accessibility without compromising on tranquility. Whether youre here to relax, explore nearby hikes, or simply slow down, Stone Heritage promises a rejuvenating retreat in the heart of the Himalayaswhere comfort, heritage, and natural beauty come together."
+,
+    description: [
+      {
+        subheading: "The Space",
+        content:
+         `Our property is located just 5 km before Mukteshwar, right on the state highway, in the heart of nature. It features beautiful boutique rooms with garden space where you can enjoy both sunrise and sunset views. We serve delicious vegetarian food on the property.
+
+There are two walking trails nearby—one short trail leading to a scenic sunset point, and a longer one that takes you to the famous Mukteshwar Mahadev Temple, about 5 km away.` },
+      {
+        subheading: "Guest Access",
+        content:
+         "Guests can comfortably access all areas of the property."     },
+      {
+        subheading: "Other Things to Note",
+        content:
+         `House Rules are simple and gentle -this is our home.
+Our kitchen is strictly vegetarian, and loud music is not allowed.`},
+    ],
+
+    amenities: [
+      {
+        logo: <SignalWifi4BarIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+        text: "Free Wi-Fi",
+        description: "High-speed internet available 24/7.",
+      },
+      {
+        logo: <AcUnitIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+        text: "Air-Conditioning",
+        description: "Stay cool and comfortable.",
+      },
+      {
+        logo: <ConnectedTvIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+        text: "Smart TV",
+        description: "42-inch smart TV for entertainment.",
+      },
+    ],
+  },
+
+  2: {
+    aboutIntro:
+      "A spacious room ideal for families, offering comfort and privacy.",
+
+    description: [
+      {
+        subheading: "Guest Access",
+        content: "Entire room with attached bathroom and balcony access.",
+      },
+      {
+        subheading: "Neighborhood",
+        content: "Quiet residential area close to cafés and shops.",
+      },
+    ],
+
+    amenities: [
+      {
+        logo: <SignalWifi4BarIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+        text: "Free Wi-Fi",
+        description: "Fast and reliable internet.",
+      },
+      {
+        logo: <RoomServiceIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
+        text: "Room Service",
+        description: "On-demand food and beverages.",
+      },
+      {
+        logo: <LocalParkingIcon sx={{ fontSize: "clamp(36px,4vw,50px)", color: "#384b42" }} />,
+        text: "Free Parking",
+        description: "Secure on-site parking.",
+      },
+    ],
+  },
+
+  // 👉 TEMP placeholders for now
+  3: { description: [], amenities: [], aboutIntro: "Room 3 description" },
+  4: { description: [], amenities: [], aboutIntro: "Room 4 description" },
+  5: { description: [], amenities: [], aboutIntro: "Room 5 description" },
+  6: { description: [], amenities: [], aboutIntro: "Room 6 description" },
+  7: { description: [], amenities: [], aboutIntro: "Room 7 description" },
+};
+
+const roomData = ROOMS_DATA[roomId] || {
+  aboutIntro: "",
+  description: [],
+  amenities: [],
+};
+
+const { aboutIntro, description, amenities } = roomData;
 const message = `👋 Hi Akash!
 
 🏡 I’m interested in booking the *${roomName}* at The Stone Heritage.
@@ -209,7 +301,7 @@ const Paragraph = styled("p")`
   text-align: center;
 
   @media (min-width: 768px) {
-    text-align: left;
+    // text-align: left;
   }
 `;
 
