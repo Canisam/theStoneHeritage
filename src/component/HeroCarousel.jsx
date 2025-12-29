@@ -149,7 +149,18 @@ export default function HeroCarousel({ id = 0 }) {
   if (!slides.length) return null;
 
   return (
-    <Box sx={{ height: "60vh", overflow: "hidden", position: "relative" }}>
+<Box
+  sx={{
+    height: {
+      xs: "45vh",  // mobile
+      sm: "50vh",  // larger mobile / small tablets
+      md: "55vh",  // tablets & laptops
+    },
+    overflow: "hidden",
+    position: "relative",
+  }}
+>
+
       <Box
         onTransitionEnd={onTransitionEnd}
         sx={{

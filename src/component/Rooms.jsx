@@ -28,29 +28,7 @@ const roomId = Number(id);
     0;
 const roomName = location.state?.name || "Accomodation"
 /*
-Brass Room – Heritage Villa Room
-Our finest heritage room in the villa, with a large private balcony that offers beautiful sunrise views. The room features a spacious, well-equipped bathroom with all modern amenities, blending comfort with classic heritage charm. It has a king-size bed, and a floor mattress can be arranged for an extra guest.
 
-Aminities 
-Balcony: 
-Private Washroom 
-Tv 
-Heater 
-Couche
-Wifi 
-Kettle 
-
-Guest access 
-In this property, we have 6 boutique rooms. Guests can enjoy access to all common areas, including the garden, dining space, and sitting areas.
-
-other things to note 
-We serve vegetarian food at the property. Non-veg can be ordered from nearby restaurants.
-
-This is a peaceful place meant for slow living, not parties.
-
-We are pet-friendly, but we request that pets do not disturb other guests.
-
-Smoking and drinking are allowed only in outdoor areas.
 */
 const ROOMS_DATA = {
   1: {
@@ -141,42 +119,246 @@ amenities : [
   },
 
   2: {
-    aboutIntro:
-      "A spacious room ideal for families, offering comfort and privacy.",
+
 
     description: [
       {
-        subheading: "Guest Access",
-        content: "Entire room with attached bathroom and balcony access.",
+        subheading: "Copper Room – Heritage Room",
+        content: "The Copper Room is a charming heritage room designed for a comfortable stay. It features one king-size bed and one single bed, with an extra floor mattress available if needed. The room has a spacious attached bathroom and carries a warm, classic heritage feel, making it ideal for families or small groups.",
       },
       {
-        subheading: "Neighborhood",
-        content: "Quiet residential area close to cafés and shops.",
-      },
+        subheading: "Guest Access",
+        content:
+         "In this property, we have 6 boutique rooms. Guests can enjoy access to all common areas, including the garden, dining space, and sitting areas."     },
+      {
+        subheading: "Other Things to Note",
+        content:
+         `We serve vegetarian food at the property. Non-veg can be ordered from nearby restaurants.
+
+This is a peaceful place meant for slow living, not parties.
+
+We are pet-friendly, but we request that pets do not disturb other guests.
+
+Smoking and drinking are allowed only in outdoor areas.`},
     ],
 
-    amenities: [
+amenities : [
+  {
+    logo: (
+      <BalconyIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Private Balcony",
+    },
+  {
+    logo: (
+      <BathroomIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Private Washroom",
+    },
+  {
+    logo: (
+      <ConnectedTvIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Television",
+    },
+  {
+    logo: (
+      <WhatshotIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Room Heater",
+ 
+  },
+  {
+    logo: (
+      <WeekendIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Comfortable Couch",
+     },
+  {
+    logo: (
+      <SignalWifi4BarIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Free Wi-Fi",
+
+  },
+  {
+    logo: (
+      <LocalCafeIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Electric Kettle",
+
+  },
+],
+  },
+  3: {
+
+    description: [
       {
-        logo: <SignalWifi4BarIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-        text: "Free Wi-Fi",
-        description: "Fast and reliable internet.",
-      },
+        subheading: "Vintage Stone Room",
+        content: "A cute and cozy stone-made room with rustic charm. It has two large windows for natural light, a private attached washroom, and one comfortable king-size bed."  },
       {
-        logo: <RoomServiceIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-        text: "Room Service",
-        description: "On-demand food and beverages.",
-      },
+        subheading: "Guest Access",
+        content:
+         "In this property, we have 6 boutique rooms. Guests can enjoy access to all common areas, including the garden, dining space, and sitting areas."     },
       {
-        logo: <LocalParkingIcon sx={{ fontSize: "clamp(36px,4vw,50px)", color: "#384b42" }} />,
-        text: "Free Parking",
-        description: "Secure on-site parking.",
-      },
+        subheading: "Other Things to Note",
+        content:
+         `We serve vegetarian food at the property. Non-veg can be ordered from nearby restaurants.
+
+This is a peaceful place meant for slow living, not parties.
+
+We are pet-friendly, but we request that pets do not disturb other guests.
+
+Smoking and drinking are allowed only in outdoor areas.`},
     ],
+
+amenities : [
+  {
+    logo: (
+      <BalconyIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Private Balcony",
+    },
+  {
+    logo: (
+      <BathroomIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Private Washroom",
+    },
+  
+  {
+    logo: (
+      <WhatshotIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Room Heater",
+ 
+  },
+  {
+    logo: (
+      <WeekendIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Comfortable Couch",
+     },
+  {
+    logo: (
+      <SignalWifi4BarIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Free Wi-Fi",
+
+  },
+  {
+    logo: (
+      <LocalCafeIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Electric Kettle",
+
+  },
+],
+  },
+  4: {
+
+    description: [
+      {
+        subheading: "Stonewood Family Retreat",
+        content: "A spacious room ideal for families, featuring two double king-size beds and a private washroom. One extra floor mattress can be arranged if needed, making it comfortable for larger families."},    {
+        subheading: "Guest Access",
+        content:
+         "In this property, we have 6 boutique rooms. Guests can enjoy access to all common areas, including the garden, dining space, and sitting areas."     },
+      {
+        subheading: "Other Things to Note",
+        content:
+         `We serve vegetarian food at the property. Non-veg can be ordered from nearby restaurants.
+
+This is a peaceful place meant for slow living, not parties.
+
+We are pet-friendly, but we request that pets do not disturb other guests.
+
+Smoking and drinking are allowed only in outdoor areas.`},
+    ],
+
+amenities : [
+  {
+    logo: (
+      <BalconyIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Private Balcony",
+    },
+  {
+    logo: (
+      <BathroomIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Private Washroom",
+    },
+  
+  {
+    logo: (
+      <WhatshotIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Room Heater",
+ 
+  },
+  {
+    logo: (
+      <WeekendIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Comfortable Couch",
+     },
+  {
+    logo: (
+      <SignalWifi4BarIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Free Wi-Fi",
+
+  },
+  {
+    logo: (
+      <LocalCafeIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Electric Kettle",
+
+  },
+],
   },
 
-  // 👉 TEMP placeholders for now
-  3: { description: [], amenities: [], aboutIntro: "Room 3 description" },
-  4: { description: [], amenities: [], aboutIntro: "Room 4 description" },
+  
   5: { description: [], amenities: [], aboutIntro: "Room 5 description" },
   6: { description: [], amenities: [], aboutIntro: "Room 6 description" },
   7: { description: [], amenities: [], aboutIntro: "Room 7 description" },
@@ -250,7 +432,7 @@ Thanks! 😊`;
 
   <InfoItem>
     <InfoLabel>Guests</InfoLabel>
-    <InfoValue>Up to 4 Guests</InfoValue>
+    <InfoValue>{roomId==4?"Up to 5 Guests":roomId==3?"Up to 3 Guests":"Up to 4 Guests"}</InfoValue>
   </InfoItem>
 </InfoContainer>
 
@@ -307,7 +489,7 @@ const Features = styled("div")`
   justify-content: center;
   gap: 0.75rem;  
   margin-top: 1.5rem;
-  margin-bottom: 12vh;
+  margin-bottom: 2vh;
 
   /* Mobile: allow wrapping (IMPORTANT) */
   @media (max-width: 480px) {
@@ -420,7 +602,7 @@ const AvailabilityBtn = styled("button")`
 
 const InfoContainer = styled("div")`
   width: 95%;
-  margin: 2rem auto 0;
+  margin: 0 2rem auto 0;
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -433,8 +615,9 @@ const InfoContainer = styled("div")`
 
   @media (max-width: 600px) {
     flex-direction: column;
+  margin-bottom: 6rem;
     gap: 0.75rem;
-    padding: 1rem;
+    padding: 1rem ;
   }
 `;
 
@@ -449,7 +632,7 @@ const InfoLabel = styled("span")`
   font-size: 0.85rem;
   color: #777;
   font-weight: 500;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
 `;
 
 const InfoValue = styled("span")`
