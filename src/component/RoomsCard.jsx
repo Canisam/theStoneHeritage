@@ -125,7 +125,7 @@ const Description = styled("div")`
 `;
 
 const ContentButton = styled("button")`
-  background-color: brown;
+  background-color: #0b010131;
   color: #fff;
   border: none;
   padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
@@ -135,16 +135,13 @@ const ContentButton = styled("button")`
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: 1rem;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: #7a1e1e;
-  }
 
   @media (max-width: 480px) {
-    width: 100%;
+    font-size: 0.8rem;
     justify-content: center;
   }
 `;
