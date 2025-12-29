@@ -6,10 +6,14 @@ import NavBar from "./NavBar";
 import FeaturesCard from "./FeaturesCard";
 
 import SignalWifi4BarIcon from "@mui/icons-material/SignalWifi4Bar";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
 import ConnectedTvIcon from "@mui/icons-material/ConnectedTv";
-import RoomServiceIcon from "@mui/icons-material/RoomService";
-import LocalParkingIcon from "@mui/icons-material/LocalParking";
+import WhatshotIcon from "@mui/icons-material/Whatshot";
+import WeekendIcon from "@mui/icons-material/Weekend";
+import BathroomIcon from "@mui/icons-material/Bathroom";
+import BalconyIcon from "@mui/icons-material/Balcony";
+import LocalCafeIcon   from "@mui/icons-material/LocalCafe";
+import RoomServiceIcon from '@mui/icons-material/RoomService';
+import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import FloatingWhatsApp from "./FloatingWhatsApp";
 import HeroCarousel from "./HeroCarousel";
 const Rooms = () => {
@@ -23,92 +27,117 @@ const roomId = Number(id);
     Number(location.state?.price) ||
     0;
 const roomName = location.state?.name || "Accomodation"
-// console.log("Room", roomName);
-//   const amenities = [
-//     {
-//       logo: <SignalWifi4BarIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-//       text: "Free Wi-Fi",
-//       description: "High-speed wireless internet available 24/7.",
-//     },
-//     {
-//       logo: <AcUnitIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-//       text: "Air-Conditioning",
-//       description: "Stay cool and comfortable all year round.",
-//     },
-//     {
-//       logo: <ConnectedTvIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-//       text: "Smart TV",
-//       description: "Watch your favourites on a 42-inch smart TV.",
-//     },
-//     {
-//       logo: <RoomServiceIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-//       text: "Room Service",
-//       description: "On-demand food and beverage delivery.",
-//     },
-//     {
-//       logo: <LocalParkingIcon sx={{ fontSize: "clamp(36px,4vw,50px)", color: "#384b42" }} />,
-//       text: "Free Parking",
-//       description: "Secure, on-site parking is included.",
-//     },
-//   ];
+/*
+Brass Room – Heritage Villa Room
+Our finest heritage room in the villa, with a large private balcony that offers beautiful sunrise views. The room features a spacious, well-equipped bathroom with all modern amenities, blending comfort with classic heritage charm. It has a king-size bed, and a floor mattress can be arranged for an extra guest.
 
-//   const description = [
-//     {
-//       subheading: "Guest Access",
-//       content:
-//         "You'll have full access to the apartment, balcony and kitchen—make yourself at home!",
-//     },
-//     {
-//       subheading: "Other Things to Note",
-//       content:
-//         "Fresh linens, toiletries and a welcome kit provided. Please respect the house rules.",
-//     },
-//     {
-//       subheading: "Neighborhood",
-//       content:
-//         "Quiet residential area just 5 min from the city centre. Cafés and shops are within walking distance.",
-//     },
-//   ];
+Aminities 
+Balcony: 
+Private Washroom 
+Tv 
+Heater 
+Couche
+Wifi 
+Kettle 
+
+Guest access 
+In this property, we have 6 boutique rooms. Guests can enjoy access to all common areas, including the garden, dining space, and sitting areas.
+
+other things to note 
+We serve vegetarian food at the property. Non-veg can be ordered from nearby restaurants.
+
+This is a peaceful place meant for slow living, not parties.
+
+We are pet-friendly, but we request that pets do not disturb other guests.
+
+Smoking and drinking are allowed only in outdoor areas.
+*/
 const ROOMS_DATA = {
   1: {
-    aboutIntro:
-    "Stone Heritage, Mukteshwar A Boutique Heritage Escape Stone Heritage is a handcrafted boutique stay set in a restored heritage building in the Kumaon Hills of Uttarakhand. With rustic stone architecture, antique dcor, and cozy interiors, it offers a unique blend of heritage charm and modern comfort. The property features 7 boutique rooms, each thoughtfully designed to create a warm and homely atmosphere. Guests can enjoy wholesome vegetarian meals, unwind by the fireplace, and soak in the peaceful mountain vibes. Perfectly placed to capture both sunrise and sunset views, Stone Heritage is surrounded by lush greenery and scenic trails, making it ideal for nature lovers and those seeking a serene escape. Its convenient on-road parking on the state highway ensures easy accessibility without compromising on tranquility. Whether youre here to relax, explore nearby hikes, or simply slow down, Stone Heritage promises a rejuvenating retreat in the heart of the Himalayaswhere comfort, heritage, and natural beauty come together."
-,
+
     description: [
       {
-        subheading: "The Space",
+        subheading: "Brass Room – Heritage Villa Room",
         content:
-         `Our property is located just 5 km before Mukteshwar, right on the state highway, in the heart of nature. It features beautiful boutique rooms with garden space where you can enjoy both sunrise and sunset views. We serve delicious vegetarian food on the property.
-
-There are two walking trails nearby—one short trail leading to a scenic sunset point, and a longer one that takes you to the famous Mukteshwar Mahadev Temple, about 5 km away.` },
-      {
+         `Our finest heritage room in the villa, with a large private balcony that offers beautiful sunrise views. The room features a spacious, well-equipped bathroom with all modern amenities, blending comfort with classic heritage charm. It has a king-size bed, and a floor mattress can be arranged for an extra guest.
+.` },
+       {
         subheading: "Guest Access",
         content:
-         "Guests can comfortably access all areas of the property."     },
+         "In this property, we have 6 boutique rooms. Guests can enjoy access to all common areas, including the garden, dining space, and sitting areas."     },
       {
         subheading: "Other Things to Note",
         content:
-         `House Rules are simple and gentle -this is our home.
-Our kitchen is strictly vegetarian, and loud music is not allowed.`},
+         `We serve vegetarian food at the property. Non-veg can be ordered from nearby restaurants.
+
+This is a peaceful place meant for slow living, not parties.
+
+We are pet-friendly, but we request that pets do not disturb other guests.
+
+Smoking and drinking are allowed only in outdoor areas.`},
     ],
 
-    amenities: [
-      {
-        logo: <SignalWifi4BarIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-        text: "Free Wi-Fi",
-        description: "High-speed internet available 24/7.",
-      },
-      {
-        logo: <AcUnitIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-        text: "Air-Conditioning",
-        description: "Stay cool and comfortable.",
-      },
-      {
-        logo: <ConnectedTvIcon sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }} />,
-        text: "Smart TV",
-        description: "42-inch smart TV for entertainment.",
-      },
-    ],
+amenities : [
+  {
+    logo: (
+      <BalconyIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Private Balcony",
+    },
+  {
+    logo: (
+      <BathroomIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Private Washroom",
+    },
+  {
+    logo: (
+      <ConnectedTvIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Television",
+    },
+  {
+    logo: (
+      <WhatshotIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Room Heater",
+ 
+  },
+  {
+    logo: (
+      <WeekendIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Comfortable Couch",
+     },
+  {
+    logo: (
+      <SignalWifi4BarIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Free Wi-Fi",
+
+  },
+  {
+    logo: (
+      <LocalCafeIcon
+        sx={{ fontSize: "clamp(40px,5vw,70px)", color: "#384b42" }}
+      />
+    ),
+    text: "Electric Kettle",
+
+  },
+]
   },
 
   2: {
@@ -178,12 +207,12 @@ Thanks! 😊`;
         <Container>
 
           <Description>
-            <Heading>About this space</Heading>
+            {/* <Heading>About this space</Heading>
             <Paragraph>
               Welcome to your home away from home. This modern and cosy space is
               perfect for solo travellers, couples or small families. Fast Wi-Fi,
               AC and comfort-focused design ensure your stay is memorable.
-            </Paragraph>
+            </Paragraph> */}
 
             {description.map(({ subheading, content }, i) => (
               <Section key={i}>
@@ -200,10 +229,31 @@ Thanks! 😊`;
                 key={i}
                 logo={logo}
                 text={text}
-                description={description}
+
               />
             ))}
           </Features>
+          <InfoContainer>
+  <InfoItem>
+    <InfoLabel>Check-in</InfoLabel>
+    <InfoValue>1:00 PM</InfoValue>
+  </InfoItem>
+
+  <Divider />
+
+  <InfoItem>
+    <InfoLabel>Check-out</InfoLabel>
+    <InfoValue>11:00 AM</InfoValue>
+  </InfoItem>
+
+  <Divider />
+
+  <InfoItem>
+    <InfoLabel>Guests</InfoLabel>
+    <InfoValue>Up to 4 Guests</InfoValue>
+  </InfoItem>
+</InfoContainer>
+
 
           <CheckAvailability>
             <Nightly>
@@ -220,6 +270,7 @@ Thanks! 😊`;
             </AvailabilityBtn>
             </Link>
           </CheckAvailability>
+
         </Container>
       </Wrapper>
       
@@ -364,5 +415,56 @@ const AvailabilityBtn = styled("button")`
   @media (max-width: 768px) {
     width: 100%;
     text-align: center;
+  }
+`;
+
+const InfoContainer = styled("div")`
+  width: 95%;
+  margin: 2rem auto 0;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+`;
+
+const InfoItem = styled("div")`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+`;
+
+const InfoLabel = styled("span")`
+  font-size: 0.85rem;
+  color: #777;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+`;
+
+const InfoValue = styled("span")`
+  font-size: 1rem;
+  color: #2d2d2d;
+  font-weight: 600;
+`;
+
+const Divider = styled("div")`
+  width: 1px;
+  height: 40px;
+  background: #ddd;
+
+  @media (max-width: 600px) {
+    width: 60%;
+    height: 1px;
   }
 `;

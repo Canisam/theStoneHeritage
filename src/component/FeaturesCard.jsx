@@ -1,14 +1,14 @@
 import React from "react";
 import { styled } from "@mui/material";
 
-const FeaturesCard = ({ logo, text, description }) => {
+const FeaturesCard = ({ logo, text }) => {
   return (
     // <CardsWrapper>
     <CardContainer role="article" aria-label={text}>
       <Logo aria-hidden="true">{logo}</Logo>
       <Content>
         <Heading>{text}</Heading>
-        <Description>{description}</Description>
+
       </Content>
     </CardContainer>
     // </CardsWrapper>
@@ -30,9 +30,8 @@ const CardContainer = styled("div")`
   align-items: center;
 
   background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 
   &:hover {
@@ -52,7 +51,7 @@ const CardContainer = styled("div")`
     max-width: 33.333%;
     padding: 0.5rem;
     margin: 0;
-    border-radius: 10px;
+
   }
 `;
 
