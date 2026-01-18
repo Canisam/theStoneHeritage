@@ -1,6 +1,7 @@
 import RoomsCard from "./RoomsCard";
+import { Typography } from "@mui/material";
 import NavBar from "./NavBar";
-
+import { Helmet } from "@vuer-ai/react-helmet-async";
 import BrassRoom from "/public/assets/stay/BrassRoom.jpeg"
 import CopperRoom from "/public/assets/stay/CopperRoom.jpeg"
 import IronRoom from "/public/assets/stay/IronRoom.jpeg"
@@ -12,6 +13,27 @@ import FloatingWhatsApp from "./FloatingWhatsApp";
 import Footer from "./Footer";
 
 const Stay = () => {
+  const staySchema= {
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "Stay at Stone Heritage Mukteshwar",
+  "description": "Luxury heritage rooms and villas with 180-degree Himalayan views.",
+  "image": "https://thestoneheritage.in/room-view.jpg",
+  "starRating": {
+    "@type": "Rating",
+    "ratingValue": "5"
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Himalayan View", "value": "True" },
+    { "@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": "True" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mukteshwar",
+    "addressRegion": "Uttarakhand",
+    "addressCountry": "IN"
+  }
+}
   const data = [
     {
       id: "1",
@@ -85,6 +107,18 @@ const Stay = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Helmet>
+        <title>
+          Luxury Rooms & Villas in Mukteshwar | Stone Heritage Mukteshwar
+        </title>
+        <meta
+        name="description"
+        content="Book your luxury stay at Stone Heritage Mukteshwar. Featuring private stone cottages, pet-friendly gardens, and 180° Himalayan views. Ideal for families."
+        />
+        <script type="application/ld+json">
+          {JSON.stringify(staySchema)}
+        </script>
+      </Helmet>
       <header>
         <NavBar />
       </header>
@@ -94,8 +128,33 @@ const Stay = () => {
 
       <Footer></Footer>
       <FloatingWhatsApp />
+      <Typography
+  variant="h1"
+  component="h1"
+  sx={stoneheritagemukteshwar}
+>
+ Luxury stay in Mukteshwar
+</Typography>
+      <Typography
+  variant="h1"
+  component="h1"
+  sx={stoneheritagemukteshwar}
+>
+Mountain view rooms, Pet-friendly villa, Heritage cottage
+</Typography>
     </div>
   );
 };
 
 export default Stay;
+const stoneheritagemukteshwar = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};

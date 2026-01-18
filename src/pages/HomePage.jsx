@@ -1,14 +1,15 @@
-import { Box } from "@mui/material";
+import { Box , Typography} from "@mui/material";
 import { useState } from "react";
 
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer";
 import HeroCarousel from "../component/HeroCarousel";
-import HomeContainer from "../component/HomeContainer";
 import HomeCard from "../component/HomeCard";
 import HomeCardSkeleton from "../component/HomeCardSkeleton";
 import MainTestimonial from "../component/testimonialCards/MainTestimonial";
 import FloatingWhatsApp from "../component/FloatingWhatsApp";
+
+import { Helmet } from "@vuer-ai/react-helmet-async";
 
 const cardImages = [
   "/assets/cards/c1.webp",
@@ -19,9 +20,61 @@ const cardImages = [
   "/assets/cards/c6.jpg",
 ];
 
+
 const HomePage = () => {
   const [loadedCount, setLoadedCount] = useState(0);
   const totalImages = cardImages.length;
+  const homePageSchema= {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VacationRental",
+      "@id": "https://thestoneheritage.in/#lodging",
+      "additionalType": "https://en.wikipedia.org/wiki/Homestay",
+      "name": "Stone Heritage Mukteshwar",
+      "description": "Experience the best homestay in Mukteshwar. Handcrafted stone architecture, 360° Himalayan views & authentic Kumaoni food.",
+      "url": "https://thestoneheritage.in/",
+      "image": "https://thestoneheritage.in/property-view.jpg",
+      "telephone": "+91-9027844424",
+      "priceRange": "₹₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bhowali Dhanachuli Rd, South Gola Range",
+        "addressLocality": "Mukteshwar",
+        "addressRegion": "Uttarakhand",
+        "postalCode": "263138",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 29.4722,
+        "longitude": 79.6467
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "360 Himalayan View", "value": "true" },
+        { "@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": "true" },
+        { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": "true" }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://thestoneheritage.in/#brand",
+      "name": "Stone Heritage Mukteshwar",
+      "url": "https://thestoneheritage.in/",
+      "logo": "https://thestoneheritage.in/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/thestoneheritage/",
+        "https://www.instagram.com/thestoneheritage/",
+        "https://www.youtube.com/@StoneHeritageMukteshwar"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9027844424",
+        "contactType": "reservations"
+      }
+    }
+  ]
+};
 
   const handleImageLoad = () => {
     setLoadedCount((prev) => prev + 1);
@@ -31,6 +84,22 @@ const HomePage = () => {
 
   return (
     <Box sx={{ width: "100%", overflowX: "hidden" }}>
+            {/* ✅ SEO HEAD SECTION */}
+      <Helmet>
+        {/* Meta Title */}
+        <title>Stone Heritage Mukteshwar | Best Heritage Homestay</title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Experience the best homestay in Mukteshwar at Stone Heritage Mukteshwar. Features handcrafted stone architecture, 360° Himalayan views & Kumaoni food. Book today!"
+        />
+
+        {/* Schema JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(homePageSchema)}
+        </script>
+      </Helmet>
       <NavBar />
       <HeroCarousel/>
 
@@ -78,8 +147,15 @@ const HomePage = () => {
       <Box sx={{ px: { xs: 2, sm: 4, md: 6 }, py: { xs: 3, sm: 4, md: 6 } }}>
         <MainTestimonial />
       </Box>
+<Typography
+  variant="h1"
+  component="h1"
+  sx={stoneheritagemukteshwar}
+>
+  Stone Heritage Mukteshwar: Luxury Heritage Homestay
+</Typography>
 
-      <Footer />
+     <Footer />
       
       {/* Floating WhatsApp */}
       <FloatingWhatsApp />
@@ -88,3 +164,14 @@ const HomePage = () => {
 };
 
 export default HomePage;
+const stoneheritagemukteshwar = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  border: 0,
+};

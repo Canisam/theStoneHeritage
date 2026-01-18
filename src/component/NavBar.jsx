@@ -40,7 +40,7 @@ const NavBar = () => {
           }}
         >
           <img src="/main-logo.png" alt="Logo" />
-          <span>The Stone Heritage</span>
+          <span>Stone Heritage Mukteshwar</span>
         </Link>
       </Logo>
 

@@ -9,13 +9,16 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <FooterGrid>
-
         {/* Brand / Map */}
-        <BrandColumn style={{display:"flex",  alignItems:"center"}}>
-          <SectionTitle >The Stone Heritage</SectionTitle>
+        <BrandColumn style={{ display: "flex", alignItems: "center" }}>
+          <SectionTitle>Stone Heritage Mukteshwar</SectionTitle>
           <MapWrapper>
-            <Link to={"https://share.google/nJXFb3hclCotiPLKc"} style={{textDecoration:"none", color:"inherit"}}>
-            <img src="/assets/map.png" alt="Stone Heritage Map" />
+            <Link
+              to={"https://maps.app.goo.gl/H9Ua6RBQ9qo7fmpM7"}
+              style={{ textDecoration: "none", color: "inherit" }}
+              target="_blank"
+            >
+              <img src="/assets/map.png" alt="Himalayan view from Stone Heritage Mukteshwar" />
             </Link>
           </MapWrapper>
         </BrandColumn>
@@ -23,9 +26,30 @@ const Footer = () => {
         {/* Quick Links */}
         <FooterColumn>
           <SectionTitle>Quick Links</SectionTitle>
-          <FooterLink>Stay</FooterLink>
-          <FooterLink>Volunteer</FooterLink>
-          <FooterLink>Experience</FooterLink>
+          <FooterLink>
+            <Link
+              to={"/Stay"}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Stay
+            </Link>
+          </FooterLink>
+          <FooterLink>
+            <Link
+              to={"/Volunteer"}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Volunteer
+            </Link>
+          </FooterLink>
+          <FooterLink>
+            <Link
+              to={"/Experience"}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Experiences
+            </Link>
+          </FooterLink>
         </FooterColumn>
 
         {/* Contact */}
@@ -35,44 +59,54 @@ const Footer = () => {
           <ContactText>+91 7900200563</ContactText>
           <ContactText>thestoneheritage@gmail.com</ContactText>
           <ContactText>
-            Sign Board, Stops At Stone Heritage,<br />
-            Bhowali Dhanachuli Rd, Mukteshwar,<br />
+            Bhowali Dhanachuli Rd, Mukteshwar,
+            <br />
             South Gola Range, Uttarakhand 263138
           </ContactText>
         </FooterColumn>
 
         {/* Social */}
-        <FooterColumn >
-          <SectionTitle >Let&apos;s Connect ;)</SectionTitle>
+        <FooterColumn>
+          <SectionTitle>Let&apos;s Connect ;)</SectionTitle>
           <SocialIcons>
-      <Link
-  to="https://api.whatsapp.com/send/?phone=%2B917900200563&text&type=phone_number&app_absent=0"
-  style={{ textDecoration: "none", color: "inherit" }}
->
-  <WhatsAppIcon />
-</Link>
-<Link
-  to="https://www.instagram.com/thestoneheritage/"
-  style={{ textDecoration: "none", color: "inherit" }}
->
-    <InstagramIcon />
-</Link>
-
-      <Link to={"https://www.google.com/maps/place/Stone+Heritage+Mukteshwar/@29.4344652,79.6421795,17z/data=!3m1!4b1!4m9!3m8!1s0x39a0bd7d35a2e497:0x466b07899edd7565!5m2!4m1!1i2!8m2!3d29.4344652!4d79.6447544!16s%2Fg%2F11xcykp72p?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D"} style={{textDecoration:"none", color:"inherit"}}>
-            <GoogleIcon />
+            <Link
+              to="https://api.whatsapp.com/send/?phone=%2B917900200563&text&type=phone_number&app_absent=0"
+              target="_blank"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <WhatsAppIcon />
+            </Link>
+            <Link
+              to="https://www.instagram.com/thestoneheritage/"
+              style={{ textDecoration: "none", color: "inherit" }}
+              target="_blank"
+            >
+              <InstagramIcon />
             </Link>
 
-            <Link to={"https://www.youtube.com/watch?v=6r-H4ywHnqM&pp=ygUSdGhlIHN0b25lIGhlcml0YWdl"}   style={{textDecoration:"none", color:"inherit"}}>
-            <YouTubeIcon />
-            </Link>    
+            <Link
+              to={
+                "https://www.google.com/maps/place/Stone+Heritage+Mukteshwar/@29.4344652,79.6421795,17z/data=!3m1!4b1!4m9!3m8!1s0x39a0bd7d35a2e497:0x466b07899edd7565!5m2!4m1!1i2!8m2!3d29.4344652!4d79.6447544!16s%2Fg%2F11xcykp72p?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+              }
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <GoogleIcon />
+            </Link>
+
+            <Link
+              to={
+                "https://www.youtube.com/watch?v=6r-H4ywHnqM&pp=ygUSdGhlIHN0b25lIGhlcml0YWdl"
+              }
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <YouTubeIcon />
+            </Link>
           </SocialIcons>
         </FooterColumn>
-
       </FooterGrid>
 
       <BottomBar>
-        <span>© 2025 Stone Heritage. All Rights Reserved.</span>
-  
+        <span>© 2025 Stone Heritage Mukteshwar. All Rights Reserved.</span>
       </BottomBar>
     </FooterWrapper>
   );
@@ -90,7 +124,6 @@ const FooterGrid = styled("div")`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
-  
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
@@ -112,7 +145,6 @@ const FooterColumn = styled("div")`
   }
 `;
 
-
 const BrandColumn = styled(FooterColumn)`
   align-items: flex-start;
 
@@ -120,7 +152,6 @@ const BrandColumn = styled(FooterColumn)`
     align-items: center;
   }
 `;
-
 
 const SectionTitle = styled("h4")`
   font-size: 20px;
@@ -132,7 +163,6 @@ const SectionTitle = styled("h4")`
     text-align: center;
   }
 `;
-
 
 const MapWrapper = styled("div")`
   width: 100%;
@@ -166,7 +196,6 @@ const MapWrapper = styled("div")`
     }
   }
 `;
-
 
 const FooterLink = styled("span")`
   font-size: 16px;

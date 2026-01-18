@@ -7,19 +7,16 @@ import OverlayImage from "/assets/image1.png"; // Image inside map
 
 const HeroSectionVolunteer = () => {
   return (
+
     <Container component="section" aria-labelledby="hero-title">
       <ContentBox>
         <Title id="hero-title" component="h1">
-          Be the Change.
-          <br />
-          Start with <Emphasis>a Helping Hand</Emphasis>
+      
+ Volunteer Program & Community 
+           <Emphasis>Impact in Mukteshwar</Emphasis>
         </Title>
-
         <Paragraph component="p">
-          Join our mission to uplift communities, empower individuals, and bring
-          lasting change. Whether you give your time, skills, or heart — every
-          act of service counts.
-        </Paragraph>
+   Join our mission to uplift communities, empower individuals, and bring lasting change. Through Work exchange India, eco-farming volunteer opportunities, Himalayan community projects, and skill-sharing stays, whether you give your time, skills, or heart — every act of service counts.  </Paragraph>
 
         <CTAButton
           variant="contained"
@@ -151,7 +148,7 @@ const Title = styled(Typography)({
   wordWrap: "break-word",
 });
 
-const Emphasis = styled("span")({
+const Emphasis = styled("p")({
   color: "#1976d2",
 });
 

@@ -27,7 +27,7 @@ const FlipCard = ({
         <div className="card-face card-back" style={{ backgroundImage: `url(${imageUrl})` }}>
           <h3>{title}</h3>
           <p>{backDescription}</p>
-          <div className="price">{price}</div>
+          {/* <div className="price">{price}</div> */}
           <button onClick={(e) => { e.stopPropagation(); toggleFlip(); }}>Back</button>
         </div>
       </div>

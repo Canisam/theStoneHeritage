@@ -12,7 +12,33 @@ import BgMap from "/assets/bg-map.png";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import FloatingWhatsApp from "./FloatingWhatsApp";
+import { Helmet } from "@vuer-ai/react-helmet-async";
+
 const Volunteer = () => {
+  // ✅ Volunteer Schema JSON-LD
+  const volunteerSchema = {
+    "@context": "https://schema.org",
+    "@type": "VolunteerAction",
+    name: "Community Volunteer Program at Stone Heritage Mukteshwar",
+    description:
+      "Exchange your skills in teaching or organic farming for a heritage stay at Stone Heritage Mukteshwar in the Himalayas.",
+    location: {
+      "@type": "Place",
+      name: "Stone Heritage Mukteshwar",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Mukteshwar",
+        addressRegion: "Uttarakhand",
+        addressCountry: "IN",
+      },
+    },
+    provider: {
+      "@type": "Organization",
+      name: "Stone Heritage Mukteshwar",
+      url: "https://thestoneheritage.in/",
+    },
+  };
+
   const skills = [
     {
       name: "Coding",
@@ -21,12 +47,12 @@ const Volunteer = () => {
     },
     {
       name: "Teamwork",
-      description: "Collaborates well with diverse teams and shares ideas.",
+      description: "Collaborates well with diverse teams.",
       icon: <GroupIcon color="secondary" fontSize="large" />,
     },
     {
       name: "Creativity",
-      description: "Brings innovative ideas to every project.",
+      description: "Brings innovative ideas to projects.",
       icon: <EmojiObjectsIcon color="warning" fontSize="large" />,
     },
     {
@@ -36,77 +62,88 @@ const Volunteer = () => {
     },
     {
       name: "Volunteering",
-      description: "Passionate about social work.",
+      description: "Passionate about community impact.",
       icon: <VolunteerActivismIcon color="error" fontSize="large" />,
     },
   ];
 
   const services = [
     {
-      name: "Training Programs",
-      description: "Hands-on learning experiences.",
-      icon: <CodeIcon color="primary" fontSize="large" />,
-    },
-    {
-      name: "Mentorship",
-      description: "Guidance from experienced mentors.",
+      name: "Work Exchange",
+      description: "Volunteer in return for a heritage stay.",
       icon: <GroupIcon color="secondary" fontSize="large" />,
     },
     {
-      name: "Workshops",
-      description: "Skill-building events and sessions.",
+      name: "Organic Farming",
+      description: "Hands-on eco-farming experience.",
       icon: <EmojiObjectsIcon color="warning" fontSize="large" />,
     },
     {
-      name: "Networking",
-      description: "Connect with professionals and peers.",
+      name: "Teaching",
+      description: "Skill-sharing with local communities.",
       icon: <LanguageIcon color="success" fontSize="large" />,
-    },
-    {
-      name: "Recognition",
-      description: "Certificates and awards.",
-      icon: <VolunteerActivismIcon color="error" fontSize="large" />,
     },
   ];
 
   return (
     <>
-    <PageWrapper>
+      {/* ✅ SEO HEAD SECTION */}
+      <Helmet>
+        {/* Meta Title */}
+        <title>Volunteer in Mukteshwar | Work Exchange at Stone Heritage</title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Volunteer in Mukteshwar with Stone Heritage. Join our work exchange program in organic farming, teaching, and community projects while staying in the Himalayas."
+        />
+
+        {/* Schema JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(volunteerSchema)}
+        </script>
+      </Helmet>
+
+      {/* PAGE CONTENT */}
       <NavBar />
-      <HeroSectionVolunteer />
 
-      <SectionTitle variant="h2">Volunteer Skills</SectionTitle>
-      <HorizontalScroll>
-        {skills.map((skill, index) => (
-          <FeaturesCard
-            key={index}
-            logo={skill.icon}
-            text={skill.name}
-            description={skill.description}
-          />
-        ))}
-      </HorizontalScroll>
+      <PageWrapper>
+      
+        <HeroSectionVolunteer />
 
-      <SectionTitle variant="h2">What We Offer</SectionTitle>
-      <HorizontalScroll>
-        {services.map((service, index) => (
-          <FeaturesCard
-            key={index}
-            logo={service.icon}
-            text={service.name}
-            description={service.description}
-          />
-        ))}
-      </HorizontalScroll>
-    </PageWrapper>
-            <Footer></Footer>
-      <FloatingWhatsApp></FloatingWhatsApp>
+
+        <SectionTitle variant="h3">Volunteer Skills</SectionTitle>
+        <HorizontalScroll>
+          {skills.map((skill, index) => (
+            <FeaturesCard
+              key={index}
+              logo={skill.icon}
+              text={skill.name}
+              description={skill.description}
+            />
+          ))}
+        </HorizontalScroll>
+
+        <SectionTitle variant="h3">What We Offer</SectionTitle>
+        <HorizontalScroll>
+          {services.map((service, index) => (
+            <FeaturesCard
+              key={index}
+              logo={service.icon}
+              text={service.name}
+              description={service.description}
+            />
+          ))}
+        </HorizontalScroll>
+      </PageWrapper>
+
+      <Footer />
+      <FloatingWhatsApp />
     </>
   );
 };
 
 export default Volunteer;
-
 const PageWrapper = styled(Box)`
   background-image: url(${BgMap});
   background-size: cover;
@@ -155,7 +192,7 @@ const SectionTitle = styled(Typography)`
   text-align: center;
   margin-top: 40px;
   margin-bottom: 10px;
-  color: #222;
+  color: #1976d2;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
 
   @media (max-width: 480px) {
