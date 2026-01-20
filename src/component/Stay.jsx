@@ -50,7 +50,7 @@ const Stay = () => {
       // price: 2567.01,
       heading: "Copper Room",
       description:
-        "1 King Bed . 1 Single Bed",
+        "4 Guest . 1 Bedroom . 1 King Bed . 1 Single Bed . 1 Floor Matteress . Private Washroom 1 King Bed . 1 Single Bed",
       roomUrl: "/Rooms/2",
       // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
@@ -60,7 +60,7 @@ const Stay = () => {
       // price: 3800,
       heading: "The Vintage Room",
       description:
-        "1 King Bed",
+        "2 Guest . 1 Bedroom . 1 King Bed  . Private Washroom",
       roomUrl: "/Rooms/3",
       // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
@@ -70,7 +70,7 @@ const Stay = () => {
       // price: 3800,
       heading: "Stonewood Family Retreat",
       description:
-        "2 King Bed",
+        "4 Guest . 1 Bedroom . 2 King Bed .  Private Washroom",
       roomUrl: "/Rooms/4",
       // imageSliderUrls: [forestImg, mountainImg, mudImg],
     },
