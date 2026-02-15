@@ -76,7 +76,7 @@ const Footer = () => {
           <SectionTitle>Let&apos;s Connect ;)</SectionTitle>
           <SocialIcons>
             <Link
-              to="https://api.whatsapp.com/send/?phone=%2B917900200563&text&type=phone_number&app_absent=0"
+              to="https://api.whatsapp.com/send/?phone=%2B919027844424&text&type=phone_number&app_absent=0"
               target="_blank"
               style={{ textDecoration: "none", color: "inherit" }}
             >
