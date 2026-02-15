@@ -38,14 +38,13 @@ import Availability from "./component/Availability"
 import Volunteer from "./component/Volunteer"
 import Experience from "./component/Experience";
 import HomePage from "./pages/HomePage";
-import MainTestimonial from "./component/testimonialCards/MainTestimonial";
-
+import ScrollToTop from "./component/ScrollToTop";
 
 function App() {
   return (
     <>
- 
     <BrowserRouter>
+   <ScrollToTop />
     <Routes>
 
       <Route path="/" element={<HomePage/>}/>

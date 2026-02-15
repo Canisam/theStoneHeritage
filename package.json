@@ -15,7 +15,7 @@
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
     "@vuer-ai/react-helmet-async": "^2.0.7",
-    "framer-motion": "^12.23.6",
+    "framer-motion": "^12.34.0",
     "lottie-react": "^2.4.1",
     "react": "^19.1.0",
     "react-date-range": "^2.0.1",

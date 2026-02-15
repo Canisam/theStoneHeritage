@@ -8,7 +8,9 @@ import HomeCard from "../component/HomeCard";
 import HomeCardSkeleton from "../component/HomeCardSkeleton";
 import MainTestimonial from "../component/testimonialCards/MainTestimonial";
 import FloatingWhatsApp from "../component/FloatingWhatsApp";
-
+import carouselData from "../data/carouselData";
+import Stay from "../component/Stay";
+import GalleryTitle from "../component/GalleryTitle";
 import { Helmet } from "@vuer-ai/react-helmet-async";
 
 const cardImages = [
@@ -24,57 +26,70 @@ const cardImages = [
 const HomePage = () => {
   const [loadedCount, setLoadedCount] = useState(0);
   const totalImages = cardImages.length;
-  const homePageSchema= {
+const homePageSchema = {
   "@context": "https://schema.org",
-  "@graph": [
+  "@type": "VacationRental",
+  identifier: "STONE-HERITAGE-MUKT-001",
+  name: "Stone Heritage Mukteshwar",
+  alternateName: "Stone Heritage Homestay Mukteshwar",
+  description:
+    "An authentic stone homestay in Mukteshwar offering luxury heritage cottages, 360-degree Himalayan views, and personalized hospitality by Akash.",
+  url: "https://thestoneheritage.in/",
+  telephone: "+91-9027844424",
+  priceRange: "₹₹₹",
+  image:
+    "https://thestoneheritage.in/assets/img/himalayan-view-terrace.webp",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 29.43444,
+    longitude: 79.64481,
+  },
+  
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Bhowali Dhanachuli Rd, South Gola Range",
+    addressLocality: "Mukteshwar",
+    addressRegion: "Uttarakhand",
+    postalCode: "263138",
+    addressCountry: "IN",
+  },
+  containsPlace: [
     {
-      "@type": "VacationRental",
-      "@id": "https://thestoneheritage.in/#lodging",
-      "additionalType": "https://en.wikipedia.org/wiki/Homestay",
-      "name": "Stone Heritage Mukteshwar",
-      "description": "Experience the best homestay in Mukteshwar. Handcrafted stone architecture, 360° Himalayan views & authentic Kumaoni food.",
-      "url": "https://thestoneheritage.in/",
-      "image": "https://thestoneheritage.in/property-view.jpg",
-      "telephone": "+91-9027844424",
-      "priceRange": "₹₹₹",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Bhowali Dhanachuli Rd, South Gola Range",
-        "addressLocality": "Mukteshwar",
-        "addressRegion": "Uttarakhand",
-        "postalCode": "263138",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 29.4722,
-        "longitude": 79.6467
-      },
-      "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "360 Himalayan View", "value": "true" },
-        { "@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": "true" },
-        { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": "true" }
-      ]
+      "@type": "Accommodation",
+      name: "Vintage Stone Cottage",
+      description:
+        "Handcrafted heritage room with mountain views.",
     },
     {
-      "@type": "Organization",
-      "@id": "https://thestoneheritage.in/#brand",
-      "name": "Stone Heritage Mukteshwar",
-      "url": "https://thestoneheritage.in/",
-      "logo": "https://thestoneheritage.in/logo.png",
-      "sameAs": [
-        "https://www.facebook.com/thestoneheritage/",
-        "https://www.instagram.com/thestoneheritage/",
-        "https://www.youtube.com/@StoneHeritageMukteshwar"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-9027844424",
-        "contactType": "reservations"
-      }
-    }
-  ]
+      "@type": "Accommodation",
+      name: "Stonewood Family Retreat",
+      description:
+        "Spacious luxury suite for family groups.",
+    },
+  ],
+  host: {
+    "@type": "Person",
+    name: "Akash",
+    description: "Aapka Mukteshwar wala Host & Dost",
+    knowsAbout: [
+      "Mukteshwar Tourism",
+      "Kumaoni Culture",
+      "Himalayan Hospitality",
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "137",
+  },
+  sameAs: [
+  "https://www.facebook.com/thestoneheritage/",
+  "https://www.instagram.com/thestoneheritage/",
+  "https://www.youtube.com/@StoneHeritageMukteshwar"
+],
+
 };
+
 
   const handleImageLoad = () => {
     setLoadedCount((prev) => prev + 1);
@@ -85,23 +100,89 @@ const HomePage = () => {
   return (
     <Box sx={{ width: "100%", overflowX: "hidden" }}>
             {/* ✅ SEO HEAD SECTION */}
-      <Helmet>
-        {/* Meta Title */}
-        <title>Stone Heritage Mukteshwar | Best Heritage Homestay</title>
+<Helmet>
+  <title>
+    Stone Heritage Mukteshwar | Best Heritage Homestay
+  </title>
 
-        {/* Meta Description */}
-        <meta
-          name="description"
-          content="Experience the best homestay in Mukteshwar at Stone Heritage Mukteshwar. Features handcrafted stone architecture, 360° Himalayan views & Kumaoni food. Book today!"
-        />
+  <meta
+    name="description"
+    content="Experience the best homestay in Mukteshwar..."
+  />
+  <meta property="og:title" content="Stone Heritage Mukteshwar" />
+<meta property="og:description" content="Luxury heritage stay in Mukteshwar with Himalayan views." />
+<meta property="og:image" content="https://thestoneheritage.in/assets/img/himalayan-view-terrace.webp" />
+<meta property="og:url" content="https://thestoneheritage.in/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
 
-        {/* Schema JSON-LD */}
-        <script type="application/ld+json">
-          {JSON.stringify(homePageSchema)}
-        </script>
-      </Helmet>
+
+  {/* VacationRental Schema */}
+  <script type="application/ld+json">
+    {JSON.stringify(homePageSchema)}
+  </script>
+
+  {/* Organization Schema */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://thestoneheritage.in/#organization",
+      name: "Stone Heritage Mukteshwar",
+      url: "https://thestoneheritage.in/",
+      logo: "https://thestoneheritage.in/logo.png",
+      sameAs: [
+        "https://www.facebook.com/thestoneheritage/",
+        "https://www.instagram.com/thestoneheritage/",
+        "https://www.youtube.com/@StoneHeritageMukteshwar"
+      ],
+      brand: {
+  "@id": "https://thestoneheritage.in/#organization"
+}
+    })}
+  </script>
+
+  {/* FAQ Schema */}
+
+  <script type="application/ld+json">
+{JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is Stone Heritage Mukteshwar pet friendly?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, the property welcomes pets."
+      }
+    }
+  ]
+})}
+</script>
+
+</Helmet>
+
       <NavBar />
-      <HeroCarousel/>
+
+{/* <HeroCarousel
+  images={carouselData.hero.images}
+  showOverlay={true}
+  showHeroContent={true}
+  heroTitle="Stone Heritage Mukteshwar"
+  heroSubtitle="Handcrafted stone architecture · 360° Himalayan views · Authentic Kumaoni hospitality."
+  heroButtonText="Explore Stay"
+  scrollTargetId="stay-section"
+/> */}
+
+<HeroCarousel
+  images={carouselData.hero.images}
+  showOverlay={true}
+  showHeroContent={true}
+  scrollTargetId="stay-section"
+/>
+
+
 
       {/* Cards Section */}
       <Box
@@ -146,7 +227,21 @@ const HomePage = () => {
 
       <Box sx={{ px: { xs: 2, sm: 4, md: 6 }, py: { xs: 3, sm: 4, md: 6 } }}>
         <MainTestimonial />
+
       </Box>
+      <GalleryTitle
+  title="Experience Stone Heritage"
+  subtitle="Luxury rooms, Himalayan views, timeless architecture."
+/>
+<HeroCarousel
+  images={carouselData.gallery.images}
+  showOverlay={false}
+/>
+
+<div id="stay-section">
+ <Stay showLayout={false} showHelmet={false} />
+
+</div>
 <Typography
   variant="h1"
   component="h1"

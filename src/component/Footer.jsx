@@ -88,6 +88,7 @@ const Footer = () => {
               to={
                 "https://www.google.com/maps/place/Stone+Heritage+Mukteshwar/@29.4344652,79.6421795,17z/data=!3m1!4b1!4m9!3m8!1s0x39a0bd7d35a2e497:0x466b07899edd7565!5m2!4m1!1i2!8m2!3d29.4344652!4d79.6447544!16s%2Fg%2F11xcykp72p?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D"
               }
+              target="_blank"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <GoogleIcon />
@@ -95,8 +96,9 @@ const Footer = () => {
 
             <Link
               to={
-                "https://www.youtube.com/watch?v=6r-H4ywHnqM&pp=ygUSdGhlIHN0b25lIGhlcml0YWdl"
+                "https://www.youtube.com/@StoneHeritageMukteshwar"
               }
+              target="_blank"
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <YouTubeIcon />
