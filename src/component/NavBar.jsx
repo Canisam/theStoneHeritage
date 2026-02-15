@@ -57,7 +57,7 @@ const NavBar = () => {
           <NavItem key={i} onClick={() => setMobileMenuOpen(false)}>
             {item === "Book Now" ? (
               <a
-                href="tel:+917900200563"
+                href="tel:+91902784424"
                 style={{ textDecoration: "none", color: "#984216" }}
               >
                 <BookNowButton>

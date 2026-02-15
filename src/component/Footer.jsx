@@ -55,8 +55,14 @@ const Footer = () => {
         {/* Contact */}
         <FooterColumn>
           <SectionTitle>Get In Touch</SectionTitle>
-          <ContactText>+91 9027844424</ContactText>
-          <ContactText>+91 7900200563</ContactText>
+<ContactLink href="tel:+919027844424">
+  +91 9027844424
+</ContactLink>
+
+<ContactLink href="tel:+917900200563">
+  +91 7900200563
+</ContactLink>
+
           <ContactText>thestoneheritage@gmail.com</ContactText>
           <ContactText>
             Bhowali Dhanachuli Rd, Mukteshwar,
@@ -252,5 +258,23 @@ const BottomBar = styled("div")`
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+`;
+const ContactLink = styled("a")`
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #984216;
+  text-decoration: none;
+  margin: 0.3rem 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: rgba(209, 192, 183, 0.8)
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
   }
 `;
